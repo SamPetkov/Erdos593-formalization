@@ -1,4 +1,0 @@
-import Erdos593.TripleSystem.ErdosRadoCarrier
-
-#print axioms Erdos593.TripleSystem.TriangleHost.mk_erdosRadoCarrier
-#print axioms Erdos593.TripleSystem.TriangleHost.pairRamseyTriangle_erdosRadoCarrier_of

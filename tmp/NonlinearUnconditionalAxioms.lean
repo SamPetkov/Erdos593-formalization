@@ -1,3 +1,0 @@
-import Erdos593.TripleSystem.TriangleHostRamseyUnconditional
-
-#print axioms Erdos593.TripleSystem.not_isObligatory_of_not_linear

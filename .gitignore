@@ -1,4 +1,6 @@
 /.lake/
+/tmp/
+/tmp_check.lean
 *.olean
 *.ilean
 *.olean.*
