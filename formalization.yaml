@@ -1,0 +1,126 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Erdős Problem 593: classification of obligatory triple systems"
+  description: >-
+    A Lean 4 formalization of the finite classification of obligatory triple
+    systems. For every finite edge-indexed simple 3-uniform hypergraph F, the
+    compared theorem proves that F is obligatory if and only if its
+    isolated-point reduction is linear, every hyperedge-node of its Levi graph
+    is incident with a bridge, and every Berge cycle has even length.
+  authors:
+    - name: "Samuil Petkov"
+      github: "SamPetkov"
+  license: "CC-BY-4.0"
+  responsible_maintainers:
+    - name: "Samuil Petkov"
+      github: "SamPetkov"
+
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05C15", "05C63", "05C65", "03B35"]
+
+sources:
+  - title: "Obligatory Triple Systems: An Alternative Proof and Lean Verification"
+    authors:
+      - "Samuil Petkov"
+    id: "https://github.com/SamPetkov/Erdos593/tree/d834f1f42e7e0d5d2a6c23e9487563bedb1b277b"
+    type: "article"
+    location: "https://github.com/SamPetkov/Erdos593/tree/d834f1f42e7e0d5d2a6c23e9487563bedb1b277b"
+    relationship: "formalizes"
+    note: >-
+      The Lean development formalizes the alternative implementation and
+      classification presented in this repository source.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+  - title: "A Resolution of Erdős Problems 593 and 1177: Obligatory Triple Systems and Exact Spectra"
+    authors:
+      - "Eric Li"
+    id: "https://doi.org/10.48550/arXiv.2606.24882"
+    type: "article"
+    location: "https://arxiv.org/abs/2606.24882"
+    relationship: "background"
+    note: >-
+      First publicly posted complete proof. The present formalization uses a
+      separate implementation while crediting Li for the shared complete-rank
+      one-apex lift and exact bridge-trace architecture; it makes no priority
+      or informational-independence claim.
+    license: "unknown"
+    author_endorsement: "not-contacted"
+
+status:
+  scope: >-
+    Comparator selects the central intrinsic classification theorem
+    Erdos593.TripleSystem.isObligatory_iff_isolatedReduction_intrinsic for
+    finite vertex and edge types. The same source development also proves the
+    equivalent constructive classification, but that second declaration is
+    not selected by this comparator configuration. Historical priority and
+    informational independence are outside the machine-checked claim.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - "Erdos593.TripleSystem.isObligatory_iff_isolatedReduction_intrinsic"
+    - "Erdos593.TripleSystem.isObligatory_iff_constructible_isolatedReduction"
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI GPT-5 family"]
+      framework: "Codex and Aristotle"
+      tool_setup: >-
+        AI-assisted Lean development with focused module builds, explicit gap
+        ledgers, source-closure generation, theorem-statement audits, and axiom
+        audits; the human author selected scope, reviewed provenance, and
+        controlled publication claims.
+      cost:
+        wall_time: "iterative work over several months"
+        spend_usd: "subscription-based and not separately tracked"
+        hardware: "local Windows workstation and cloud Lean runner"
+      prompting_notes: >-
+        Prompts required exact finite quantifiers, explicit separation of
+        proved endpoints from open obligations, removal of placeholders, and
+        adversarial checks of the final classification assembly.
+  spend_usd: "subscription-based and not separately tracked"
+  notes: >-
+    The code was developed interactively with substantial AI assistance and
+    human-controlled scope and attribution. Automation does not establish
+    historical independence or peer review.
+
+fidelity:
+  divergences: >-
+    This is not a line-by-line formalization of Eric Li's manuscript. It
+    formalizes the alternative implementation in the cited Petkov source. In
+    particular, it uses an explicit shift-graph realization of the required
+    high-odd-girth host, while the written manuscript invokes the classical
+    Erdős–Hajnal high-odd-girth theorem directly.
+
+review:
+  status: "self-assessed and kernel-checked; not peer-reviewed"
+  reviewers: []
+  notes: >-
+    The final declarations, finite hypotheses, imported source closure,
+    prohibited-token scan, and axiom boundary were audited. No external
+    specialist referee or community acceptance is claimed.
+
+alignment:
+  namespace: "Erdos593.TripleSystem"
+  statements:
+    - source: "Finite obligatory triple-system classification"
+      lean: "Erdos593.TripleSystem.isObligatory_iff_isolatedReduction_intrinsic"
+      module: "Erdos593.TripleSystem.ObligatoryClassification"
+      status: "proved"
+      note: >-
+        Exact equivalence between obligatoriness and the three intrinsic
+        conditions on the isolated-point reduction for finite V and E.
+    - source: "Equivalent constructive classification"
+      lean: "Erdos593.TripleSystem.isObligatory_iff_constructible_isolatedReduction"
+      module: "Erdos593.TripleSystem.ObligatoryClassification"
+      status: "proved"
+      note: >-
+        Proved in the project but not selected by this comparator configuration.
+
+acknowledgements: >-
+  Eric Li for the first public complete proof and the shared architecture;
+  Lean, Mathlib, OpenAI Codex, and Aristotle for the formalization workflow.
