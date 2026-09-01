@@ -9,3 +9,11 @@ rev = "v4.32.0"
 
 [[lean_lib]]
 name = "Erdos593"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]
