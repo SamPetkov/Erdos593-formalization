@@ -19,7 +19,7 @@ project:
 
 classification:
   arxiv: ["math.CO"]
-  msc2020: ["05C15", "05C63", "05C65", "03B35"]
+  msc2020: ["05C15", "05C63", "05C65"]
 
 sources:
   - title: "Obligatory Triple Systems: An Alternative Proof and Lean Verification"
