@@ -97,31 +97,13 @@ abbrev NonIsolatedPoint :=
   {x : V // ¬F.IsIsolated x}
 
 /-- Delete all isolated points while retaining the original edge indices. -/
-def isolatedReduction : TripleSystem F.NonIsolatedPoint E where
-  Inc x e := F.Inc x.1 e
-  edge_ncard := by
-    intro e
-    change Set.ncard {x : F.NonIsolatedPoint |
-      (x : V) ∈ {y : V | F.Inc y e}} = 3
-    rw [Set.ncard_subtype]
-    have hsubset : {x : V | F.Inc x e} ⊆ {x : V | ¬F.IsIsolated x} := by
-      intro x hx
-      exact F.not_isolated_of_inc hx
-    rw [Set.inter_eq_left.mpr hsubset]
-    exact F.edge_ncard e
-  simple := by
-    intro e f hef
-    apply F.simple
-    ext x
-    constructor
-    · intro hxe
-      let x' : F.NonIsolatedPoint := ⟨x, F.not_isolated_of_inc hxe⟩
-      have hiff := Set.ext_iff.mp hef x'
-      exact hiff.mp hxe
-    · intro hxf
-      let x' : F.NonIsolatedPoint := ⟨x, F.not_isolated_of_inc hxf⟩
-      have hiff := Set.ext_iff.mp hef x'
-      exact hiff.mpr hxf
+def isolatedReduction : TripleSystem F.NonIsolatedPoint E := by
+  sorry
+
+/-- The reduction retains exactly the incidences of non-isolated points. -/
+theorem isolatedReduction_inc {x : F.NonIsolatedPoint} {e : E} :
+    F.isolatedReduction.Inc x e ↔ F.Inc x.1 e := by
+  sorry
 
 /-- Directed point-to-edge incidence before `SimpleGraph.fromRel` symmetrizes
 it. -/

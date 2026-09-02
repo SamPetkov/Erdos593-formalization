@@ -59,7 +59,10 @@ The original manuscript repository and its exact provenance are preserved at
 This repository contains the substantive Lean source and a Palomar statement
 adapter. `Challenge.lean` is the Mathlib-only statement surface;
 `Solution.lean` imports the complete proof; `comparator.json` selects the
-central intrinsic classification theorem for Comparator and NanoDa.
+central intrinsic classification theorem for Comparator and NanoDa. Because
+the isolated reduction contains proof-valued structure fields, Comparator
+treats its implementation as a named definition boundary and separately
+checks `isolatedReduction_inc`, which fixes its incidence relation exactly.
 
 ## Build
 
