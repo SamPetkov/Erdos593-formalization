@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.EdgeRestrictionReconstruction
-import Erdos593.TripleSystem.SequenceLiftBaseFiberObligatory
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupport
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
+module
+
+public import Erdos593.TripleSystem.EdgeRestrictionReconstruction
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberObligatory
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupport
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
 
 /-!
 # Running assemblies of linear sequence-lift base fibres
@@ -14,6 +16,8 @@ tail and meet its total vertex support either in no point or in exactly one
 point.  Under that condition, the general exact-restriction reconstruction API
 assembles the local constructible pieces.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,6 +1,8 @@
-import Erdos593.Graph.MinimalBadCore
-import Erdos593.Graph.RainbowPositiveSize
-import Erdos593.TripleSystem.LowCrossingAtomBridge
+module
+
+public import Erdos593.Graph.MinimalBadCore
+public import Erdos593.Graph.RainbowPositiveSize
+public import Erdos593.TripleSystem.LowCrossingAtomBridge
 
 /-!
 # Countable colouring of the low crossing graph
@@ -13,6 +15,8 @@ finite forbidden-biclique graph theorem gives a colouring by natural numbers.
 The host edge type is deliberately in the vertex universe: this is the
 universe restriction of the public `Appears` interface for the expansion atom.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.HighPairSelection
-import Erdos593.TripleSystem.HighPairGraph
-import Erdos593.TripleSystem.PairCodegree
-import Erdos593.TripleSystem.RainbowExpansionEmbedding
+module
+
+public import Erdos593.TripleSystem.HighPairSelection
+public import Erdos593.TripleSystem.HighPairGraph
+public import Erdos593.TripleSystem.PairCodegree
+public import Erdos593.TripleSystem.RainbowExpansionEmbedding
 
 /-!
 # Matrix assembly from high-codegree pairs
@@ -11,6 +13,8 @@ left/right grid into the locally bounded matrix required by the finite
 rainbow extraction. Hall selection makes all third vertices globally
 distinct, which is stronger than the local multiplicity bound needed below.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ObligatoryDisjointUnion
-import Mathlib.SetTheory.Cardinal.Order
+module
+
+public import Erdos593.TripleSystem.ObligatoryDisjointUnion
+public import Mathlib.SetTheory.Cardinal.Order
 
 /-!
 # Cardinal-minimal bad triple-system cores
@@ -8,6 +10,8 @@ This module isolates the cardinal-minimal-counterexample consequence needed
 for the positive-atom theorem.  It deliberately does not attempt the global
 colouring or the remaining closure/layering construction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.Obligatory
-import Mathlib.Combinatorics.SimpleGraph.Basic
-import Mathlib.SetTheory.Cardinal.Aleph
+module
+
+public import Erdos593.TripleSystem.Obligatory
+public import Mathlib.Combinatorics.SimpleGraph.Basic
+public import Mathlib.SetTheory.Cardinal.Aleph
 
 /-!
 # The one-apex sequence lift
@@ -10,6 +12,8 @@ avoidance direction of Erdős Problem 593.  Sequence lengths range over a
 concrete well-order of cardinality `ℵ₁`; a lift hyperedge consists of a graph
 edge at a base node and one apex at a node extending the base by that edge.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.HighPairGraph
-import Erdos593.TripleSystem.PredicateColoring
+module
+
+public import Erdos593.TripleSystem.HighPairGraph
+public import Erdos593.TripleSystem.PredicateColoring
 
 /-!
 # The high-pair / low-pair edge partition
@@ -12,6 +14,8 @@ selected hyperedges.  The complementary low-pair family is kept as a
 predicate on the original edge indices; this avoids changing the host vertex
 type before the closure argument is applied.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

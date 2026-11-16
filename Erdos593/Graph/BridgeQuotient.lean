@@ -1,4 +1,6 @@
-import Erdos593.Graph.BridgeFree
+module
+
+public import Erdos593.Graph.BridgeFree
 
 /-!
 # Bridge-component quotient forest
@@ -7,6 +9,8 @@ The quotient whose vertices are the connected components after deleting all
 actual bridges, and whose edges are the surviving cross-component edges of the
 original graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace SimpleGraph

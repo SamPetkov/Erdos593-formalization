@@ -1,7 +1,9 @@
-import Erdos593.Graph.RainbowBipartite
-import Erdos593.TripleSystem.HighPairGraph
-import Mathlib.Data.Fin.Embedding
-import Mathlib.Data.Fintype.EquivFin
+module
+
+public import Erdos593.Graph.RainbowBipartite
+public import Erdos593.TripleSystem.HighPairGraph
+public import Mathlib.Data.Fin.Embedding
+public import Mathlib.Data.Fintype.EquivFin
 
 /-!
 # Local rainbow bounds from low codegree
@@ -11,6 +13,8 @@ graph branch.  If a color occurs at least `t` times in one row or column of a
 witnessed bipartite grid, the corresponding base/apex pair has `t` distinct
 third-vertex completions and is therefore a high pair.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

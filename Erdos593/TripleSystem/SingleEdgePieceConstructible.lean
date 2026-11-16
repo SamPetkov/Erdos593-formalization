@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.Constructive
-import Erdos593.TripleSystem.EdgeRestriction
-import Erdos593.TripleSystem.SingleEdgePiece
-import Mathlib.Combinatorics.SimpleGraph.Finite
+module
+
+public import Erdos593.TripleSystem.Constructive
+public import Erdos593.TripleSystem.EdgeRestriction
+public import Erdos593.TripleSystem.SingleEdgePiece
+public import Mathlib.Combinatorics.SimpleGraph.Finite
 
 /-!
 # Constructibility of canonical one-edge pieces
@@ -12,6 +14,8 @@ This file identifies that triple with the private-vertex expansion of the
 canonical graph `K₂`, and identifies it with the exact one-edge restriction
 of the ambient triple system.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

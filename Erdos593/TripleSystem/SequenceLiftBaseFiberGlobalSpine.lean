@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberExpansion
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberExpansion
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
 
 /-!
 # Finite fibre-local expansion spine for sequence lifts
@@ -13,6 +15,8 @@ with a disjoint union of the fibre restrictions, or make any global atom or
 constructibility assertion: distinct base fibres need not have disjoint vertex
 supports or disjoint base-letter images.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

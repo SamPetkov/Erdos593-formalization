@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Basic
-import Mathlib.Data.Set.PowersetCard
+module
+
+public import Erdos593.TripleSystem.Basic
+public import Mathlib.Data.Set.PowersetCard
 
 /-!
 # The finite triangle host and its linearity
@@ -12,6 +14,8 @@ the finite combinatorial layer: 3-uniformity, simplicity, and linearity.
 The Ramsey/Erdős–Rado statement that makes this host uncountably chromatic is
 intentionally not assumed or proved here.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

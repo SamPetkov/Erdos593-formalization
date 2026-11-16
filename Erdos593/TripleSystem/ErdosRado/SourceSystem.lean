@@ -1,6 +1,10 @@
-import Erdos593.TripleSystem.ErdosRado.CanonicalLevelCode
-import Erdos593.TripleSystem.ErdosRado.SourceTerminal
-import Erdos593.TripleSystem.ErdosRado.SourceEndhomogeneous
+module
+
+public import Erdos593.TripleSystem.ErdosRado.CanonicalLevelCode
+public import Erdos593.TripleSystem.ErdosRado.SourceTerminal
+public import Erdos593.TripleSystem.ErdosRado.SourceEndhomogeneous
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

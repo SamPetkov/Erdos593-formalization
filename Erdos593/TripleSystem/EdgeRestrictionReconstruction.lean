@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Constructive
-import Erdos593.TripleSystem.EdgeRestriction
+module
+
+public import Erdos593.TripleSystem.Constructive
+public import Erdos593.TripleSystem.EdgeRestriction
 
 /-!
 # Reconstructing exact edge restrictions
@@ -9,6 +11,8 @@ pieces.  Disjoint vertex supports give a disjoint union, while a singleton
 support intersection gives the canonical one-point amalgamation.  A finite
 running-union theorem then packages repeated use of these identifications.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.ErdosRado.TraceExtension
+module
+
+public import Erdos593.TripleSystem.ErdosRado.TraceExtension
 
 /-!
 # Coherent limit prefixes for canonical traces
@@ -10,6 +12,8 @@ forms their diagonal union.  It can also package all restrictions of an
 existing prefix as a coherent chain.  It does not construct candidates or a
 global trace recursion.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

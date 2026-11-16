@@ -1,4 +1,8 @@
-import Erdos593.TripleSystem.Basic
+module
+
+public import Erdos593.TripleSystem.Basic
+
+@[expose] public section
 
 namespace Erdos593
 

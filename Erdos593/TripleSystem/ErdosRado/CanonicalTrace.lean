@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.ErdosRadoCarrier
+module
+
+public import Erdos593.TripleSystem.ErdosRadoCarrier
 
 /-!
 # Canonical ordinal carrier for the Erdos--Rado trace
@@ -7,6 +9,8 @@ This module provides a canonical carrier plus local data interfaces needed by
 a later trace construction. It proves no partition relation, candidate
 existence, coherent recursion, or global trace.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

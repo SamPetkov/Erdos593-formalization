@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseApex
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseApex
 
 /-!
 # Fibre-local apex equivalence for sequence lifts
@@ -8,6 +10,8 @@ equivalence from one selected base fibre to its own apex image. This remains
 fibre-local: it makes no identification between images from different base
 fibres and asserts no global union, cardinality, or trace decomposition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

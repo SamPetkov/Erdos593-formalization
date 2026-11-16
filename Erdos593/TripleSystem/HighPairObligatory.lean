@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.HighPairMatrix
-import Erdos593.TripleSystem.ObligatoryAtoms
+module
+
+public import Erdos593.TripleSystem.HighPairMatrix
+public import Erdos593.TripleSystem.ObligatoryAtoms
 
 /-!
 # Positive atoms from quadratic high-pair grids
@@ -10,6 +12,8 @@ host supplies high-codegree pairs across arbitrarily large finite bipartite
 grids.  The Hall/matrix construction and the finite rainbow extraction are
 reused from the preceding modules.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

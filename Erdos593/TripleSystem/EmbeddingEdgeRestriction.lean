@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.EdgeRestriction
-import Erdos593.TripleSystem.Isolated
-import Erdos593.TripleSystem.Isomorph
-import Erdos593.TripleSystem.IsomorphIntrinsic
+module
+
+public import Erdos593.TripleSystem.EdgeRestriction
+public import Erdos593.TripleSystem.Isolated
+public import Erdos593.TripleSystem.Isomorph
+public import Erdos593.TripleSystem.IsomorphIntrinsic
 
 /-!
 # Exact edge restrictions of embeddings
@@ -11,6 +13,8 @@ restriction formed by the host-edge indices it explicitly selects, provided
 the source has no isolated vertices.  This is the first exact bridge from a
 finite linear source to a finite linear host-edge restriction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

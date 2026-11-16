@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.EdgeRestriction
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
+module
+
+public import Erdos593.TripleSystem.EdgeRestriction
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
 
 /-!
 # Finite support-incidence graphs for sequence-lift base fibres
@@ -11,6 +13,8 @@ represented by one point-side vertex rather than a clique.  The module only
 provides finite carriers and adjacency vocabulary; it does not assert an
 acyclicity or ordering theorem.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,11 +1,15 @@
-import Erdos593.Graph.ShiftGraphChromatic
-import Erdos593.Graph.ShiftGraphOddGirth
+module
+
+public import Erdos593.Graph.ShiftGraphChromatic
+public import Erdos593.Graph.ShiftGraphOddGirth
 
 /-!
 # High-chromatic host graphs with controlled odd closed walks
 
 This packages the two shift-graph estimates into a single reusable host.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,4 +1,6 @@
-import Mathlib.Combinatorics.SimpleGraph.Acyclic
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Acyclic
 
 /-!
 # Leaf-elimination orders for finite forests
@@ -8,6 +10,8 @@ acyclic.  Every finite induced subgraph of a forest has an isolated vertex or
 a leaf, so its vertices can be ordered such that each vertex has at most one
 neighbour later in the order.
 -/
+
+@[expose] public section
 
 namespace SimpleGraph
 

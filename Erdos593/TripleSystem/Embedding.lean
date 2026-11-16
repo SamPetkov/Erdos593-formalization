@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.Basic
+module
+
+public import Erdos593.TripleSystem.Basic
 
 /-!
 # Triple-system embeddings
@@ -7,6 +9,8 @@ The manuscript uses non-induced embeddings: vertices are injected and every
 source hyperedge is carried onto a host hyperedge, while additional host edges
 among the image vertices are allowed.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

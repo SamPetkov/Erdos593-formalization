@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceBridge
-import Erdos593.TripleSystem.SequenceLiftChromatic
+module
+
+public import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceBridge
+public import Erdos593.TripleSystem.SequenceLiftChromatic
 
 /-!
 # Missing-bridge obstruction in the sequence lift
@@ -8,6 +10,8 @@ A finite linear source whose isolated reduction is missing an incident Levi
 bridge cannot be obligatory: the one-apex sequence lift of any graph without
 a countable colouring is an uncountably chromatic witness which avoids it.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

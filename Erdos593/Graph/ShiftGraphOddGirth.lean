@@ -1,5 +1,7 @@
-import Erdos593.Graph.OddClosedWalk
-import Erdos593.Graph.ShiftGraph
+module
+
+public import Erdos593.Graph.OddClosedWalk
+public import Erdos593.Graph.ShiftGraph
 
 /-!
 # Odd girth of finite shift graphs
@@ -10,6 +12,8 @@ minimal.  Both incident edges then point away from that tuple.  After deleting
 those two edges, projection to the first `r - 1` coordinates gives an odd
 closed walk two edges shorter in the lower-dimensional shift graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

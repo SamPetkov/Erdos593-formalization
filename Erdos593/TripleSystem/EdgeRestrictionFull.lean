@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.EdgeRestriction
-import Erdos593.TripleSystem.Isolated
-import Erdos593.TripleSystem.Isomorph
+module
+
+public import Erdos593.TripleSystem.EdgeRestriction
+public import Erdos593.TripleSystem.Isolated
+public import Erdos593.TripleSystem.Isomorph
 
 /-!
 # The full edge restriction
@@ -9,6 +11,8 @@ If every vertex is incident with an edge, restricting to the full edge-index
 set changes only the representation: its supported-vertex and edge subtypes are
 canonically equivalent to the original types.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

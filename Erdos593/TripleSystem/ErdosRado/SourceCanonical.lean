@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.ErdosRado.TraceGraph
+module
+
+public import Erdos593.TripleSystem.ErdosRado.TraceGraph
 
 /-!
 # Source-canonical trace prefixes
@@ -12,6 +14,8 @@ candidates have the same underlying value.
 The closure lemmas below show that source-canonicality survives restriction,
 one least-candidate extension, and coherent limits.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

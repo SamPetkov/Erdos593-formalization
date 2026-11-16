@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.TriangleHostRamsey
-import Erdos593.TripleSystem.NonlinearObstruction
-import Erdos593.TripleSystem.ObligatoryDisjointUnion
+module
+
+public import Erdos593.TripleSystem.TriangleHostRamsey
+public import Erdos593.TripleSystem.NonlinearObstruction
+public import Erdos593.TripleSystem.ObligatoryDisjointUnion
 
 /-!
 # A universe-exact triangle-host Ramsey transport
@@ -11,6 +13,8 @@ and edge universes of an arbitrary source system. It converts the conditional
 therefore into the existing nonlinearity obstruction. It does not construct a
 Ramsey witness or prove an Erdos--Rado partition relation.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

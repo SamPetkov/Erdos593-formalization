@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.EmbeddingEdgeRestriction
-import Erdos593.TripleSystem.ObligatoryIsolatedReduction
+module
+
+public import Erdos593.TripleSystem.EmbeddingEdgeRestriction
+public import Erdos593.TripleSystem.ObligatoryIsolatedReduction
 
 /-!
 # Finite linear image traces
@@ -9,6 +11,8 @@ an exact edge restriction.  For a finite linear source this restriction is
 finite, linear, and isomorphic to the source after isolated vertices have
 been removed.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

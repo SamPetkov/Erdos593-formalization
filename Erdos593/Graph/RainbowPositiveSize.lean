@@ -1,4 +1,6 @@
-import Erdos593.Graph.RainbowBipartite
+module
+
+public import Erdos593.Graph.RainbowBipartite
 
 /-!
 # Positive-size rainbow bipartite submatrices
@@ -8,6 +10,8 @@ bipartite submatrix lemma is nonzero whenever the requested submatrix has
 positive size.  The proof deliberately uses only the public extraction
 property, rather than the particular construction of the host size.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace RainbowBipartite

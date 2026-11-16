@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportBranchGeometry
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceGraph
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportBranchGeometry
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceGraph
 
 /-!
 # Acyclicity of base-fibre support incidence graphs
@@ -10,6 +12,8 @@ would propagate one initial base letter all the way around its fibre-side
 vertices.  The two boundary support points would consequently arise from the
 same base-fibre edge, contradicting simplicity of the cycle.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

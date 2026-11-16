@@ -1,10 +1,14 @@
-import Mathlib.Combinatorics.SimpleGraph.Acyclic
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Acyclic
 
 /-!
 # Elementary bridge lemmas
 
 Small finite/simple-graph facts used by the Levi-graph decomposition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceAcyclic
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceForestOrderEndpoints
-import Erdos593.TripleSystem.FiniteLiftGeneratedConstructible
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceAcyclic
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceForestOrderEndpoints
+public import Erdos593.TripleSystem.FiniteLiftGeneratedConstructible
 
 /-!
 # Unconditional endpoints for finite linear sequence-lift restrictions
@@ -10,6 +12,8 @@ endpoints into unconditional finite-linear endpoints.  The structural
 finite-generation result has no host-colourability premise; the constructible
 and obligatory consequences retain the explicit two-colourability condition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

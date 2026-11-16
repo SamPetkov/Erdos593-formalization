@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.DisjointUnion
-import Erdos593.TripleSystem.Obligatory
-import Mathlib.Data.Set.Finite.Range
-import Mathlib.SetTheory.Cardinal.Basic
+module
+
+public import Erdos593.TripleSystem.DisjointUnion
+public import Erdos593.TripleSystem.Obligatory
+public import Mathlib.Data.Set.Finite.Range
+public import Mathlib.SetTheory.Cardinal.Basic
 
 /-!
 # Finite deletion and disjoint-union closure for obligatory triple systems
@@ -13,6 +15,8 @@ private colour to every deleted vertex; consequently finite deletion preserves
 uncountable chromatic cardinality.  This lets two finite obligatory systems be
 embedded successively with disjoint images.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

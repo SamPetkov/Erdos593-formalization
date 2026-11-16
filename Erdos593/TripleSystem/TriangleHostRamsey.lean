@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.TriangleHostLinearity
-import Erdos593.TripleSystem.Obligatory
+module
+
+public import Erdos593.TripleSystem.TriangleHostLinearity
+public import Erdos593.TripleSystem.Obligatory
 
 /-!
 # A Ramsey interface for the triangle host
@@ -9,6 +11,8 @@ natural-number proper colouring of `TriangleHost.system`.  It does not prove
 the Ramsey hypothesis itself: that remains the separate Erdős--Rado/cardinal
 layer of the classical positive-atom programme.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

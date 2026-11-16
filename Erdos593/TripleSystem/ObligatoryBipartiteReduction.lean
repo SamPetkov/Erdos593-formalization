@@ -1,8 +1,10 @@
-import Erdos593.TripleSystem.Expansion
-import Erdos593.TripleSystem.ObligatoryIsolatedReduction
-import Erdos593.Graph.CompleteBipartite
-import Mathlib.Combinatorics.SimpleGraph.Copy
-import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
+module
+
+public import Erdos593.TripleSystem.Expansion
+public import Erdos593.TripleSystem.ObligatoryIsolatedReduction
+public import Erdos593.Graph.CompleteBipartite
+public import Mathlib.Combinatorics.SimpleGraph.Copy
+public import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
 
 /-!
 # Finite bipartite reduction for private-vertex expansions
@@ -18,6 +20,8 @@ The two finite parts are universe-lifted.  This is mathematically immaterial,
 but it keeps the atom in the same vertex and edge universes as the source, as
 required by the universe-indexed definition of `IsObligatory`.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

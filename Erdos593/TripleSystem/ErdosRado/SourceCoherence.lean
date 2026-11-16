@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ErdosRado.SourceRecursion
-import Erdos593.TripleSystem.ErdosRado.SourceCanonical
+module
+
+public import Erdos593.TripleSystem.ErdosRado.SourceRecursion
+public import Erdos593.TripleSystem.ErdosRado.SourceCanonical
 
 /-!
 # Coherence of the source recursion
@@ -9,6 +11,8 @@ source recursion when the recursion is anchored above the trace.  In
 particular, the run below a node of the trace agrees with every earlier stage
 of that trace.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

@@ -1,8 +1,12 @@
-import Erdos593.TripleSystem.Embedding
-import Erdos593.TripleSystem.Expansion
-import Erdos593.TripleSystem.PairCodegree
-import Erdos593.Graph.CompleteBipartiteEdges
-import Erdos593.Graph.RainbowBipartite
+module
+
+public import Erdos593.TripleSystem.Embedding
+public import Erdos593.TripleSystem.Expansion
+public import Erdos593.TripleSystem.PairCodegree
+public import Erdos593.Graph.CompleteBipartiteEdges
+public import Erdos593.Graph.RainbowBipartite
+
+@[expose] public section
 
 namespace Erdos593
 

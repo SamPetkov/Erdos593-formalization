@@ -1,5 +1,7 @@
-import Mathlib.Data.Finset.Card
-import Mathlib.SetTheory.Cardinal.Order
+module
+
+public import Mathlib.Data.Finset.Card
+public import Mathlib.SetTheory.Cardinal.Order
 
 /-!
 # Finite closure layerings
@@ -9,6 +11,8 @@ uncountable complete-bipartite forcing argument.  Its implementation will be
 kept separate: in particular, the eventual construction must use
 singular-cardinal-safe bounds for its countable closure stages.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

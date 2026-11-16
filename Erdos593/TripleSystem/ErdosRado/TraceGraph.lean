@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ErdosRado.TraceLimit
-import Erdos593.TripleSystem.ErdosRado.TransfiniteIteration
+module
+
+public import Erdos593.TripleSystem.ErdosRado.TraceLimit
+public import Erdos593.TripleSystem.ErdosRado.TransfiniteIteration
 
 /-!
 # Graph representation of trace prefixes
@@ -9,6 +11,8 @@ whereas the local trace API uses dependent ordinal-indexed prefixes.  This
 module is the small conversion layer between those representations.  It makes
 no candidate-existence or global-coherence assertion.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

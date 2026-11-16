@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ErdosRado.SourceRecursion
-import Erdos593.TripleSystem.ErdosRado.SourceCanonical
+module
+
+public import Erdos593.TripleSystem.ErdosRado.SourceRecursion
+public import Erdos593.TripleSystem.ErdosRado.SourceCanonical
 
 /-!
 # The one-anchor source-run invariant
@@ -11,6 +13,8 @@ it is shorter and has stopped because it has no candidate.  Successor stages
 append the least candidate; limit stages either inherit an earlier stopped
 prefix or take the coherent limit of all exact earlier prefixes.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

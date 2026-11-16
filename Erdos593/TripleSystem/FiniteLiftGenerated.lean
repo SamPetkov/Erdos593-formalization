@@ -1,11 +1,13 @@
-import Erdos593.Graph.NonInducedFactor
-import Erdos593.TripleSystem.BridgeBlockRunningIntersection
-import Erdos593.TripleSystem.Constructive
-import Erdos593.TripleSystem.DisjointUnion
-import Erdos593.TripleSystem.EdgeRestrictionReconstruction
-import Erdos593.TripleSystem.Expansion
-import Erdos593.TripleSystem.Isomorph
-import Erdos593.TripleSystem.OnePointAmalgamation
+module
+
+public import Erdos593.Graph.NonInducedFactor
+public import Erdos593.TripleSystem.BridgeBlockRunningIntersection
+public import Erdos593.TripleSystem.Constructive
+public import Erdos593.TripleSystem.DisjointUnion
+public import Erdos593.TripleSystem.EdgeRestrictionReconstruction
+public import Erdos593.TripleSystem.Expansion
+public import Erdos593.TripleSystem.Isomorph
+public import Erdos593.TripleSystem.OnePointAmalgamation
 
 /-!
 # Finite generation relative to a host graph
@@ -20,6 +22,8 @@ isomorphism.
 This module only records finite generation data.  In particular, it makes no
 claim that a generated system is `Constructible`, intrinsic, or colourable.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

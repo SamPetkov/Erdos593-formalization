@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.Basic
+module
+
+public import Erdos593.TripleSystem.Basic
 
 /-!
 # Isolated-point reduction
@@ -8,6 +10,8 @@ the vertex type to points incident with at least one edge.  Since every point of
 an edge is non-isolated, this restriction preserves every edge, its cardinality,
 and simplicity.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

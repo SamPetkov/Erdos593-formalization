@@ -1,6 +1,8 @@
-import Erdos593.Graph.FiniteOutdegreeColoring
-import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
-import Mathlib.Data.Nat.Pairing
+module
+
+public import Erdos593.Graph.FiniteOutdegreeColoring
+public import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
+public import Mathlib.Data.Nat.Pairing
 
 /-!
 # Countable graph colouring interfaces
@@ -10,6 +12,8 @@ This file turns the set-family compactness result in
 argument used in manuscript Lemma 2.1. The genuinely infinitary construction
 of a small closed layer decomposition is deliberately kept separate.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,11 +1,13 @@
-import Mathlib.Combinatorics.Compactness
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
-import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
-import Mathlib.Data.Finset.Card
-import Mathlib.Tactic.GCongr
-import Mathlib.Tactic.Linarith
+module
+
+public import Mathlib.Combinatorics.Compactness
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
+public import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
+public import Mathlib.Data.Finset.Card
+public import Mathlib.Tactic.GCongr
+public import Mathlib.Tactic.Linarith
 
 /-!
 # Finite-outdegree colouring
@@ -17,6 +19,8 @@ colouring with `2 * d + 1` colours.  The finite argument is greedy deletion
 after a double-counting estimate, and `Finset.rado_selection` supplies the
 global colouring.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

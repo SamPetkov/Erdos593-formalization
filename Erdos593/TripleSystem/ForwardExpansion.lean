@@ -1,5 +1,7 @@
-import Erdos593.Graph.Parity
-import Erdos593.TripleSystem.ExpansionIntrinsic
+module
+
+public import Erdos593.Graph.Parity
+public import Erdos593.TripleSystem.ExpansionIntrinsic
 
 /-!
 # Forward properties of private-vertex expansions
@@ -7,6 +9,8 @@ import Erdos593.TripleSystem.ExpansionIntrinsic
 The generator side of the finite structural theorem starts with the elementary
 intrinsic properties of the private-vertex expansion of a simple graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

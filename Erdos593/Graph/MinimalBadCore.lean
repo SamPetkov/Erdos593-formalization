@@ -1,8 +1,10 @@
-import Erdos593.Graph.CompleteBipartiteCopy
-import Erdos593.Graph.CompleteBipartiteLayering
-import Erdos593.Graph.CountableColoring
-import Erdos593.Graph.FiniteClosureLayeringConstruction
-import Mathlib.SetTheory.Cardinal.Order
+module
+
+public import Erdos593.Graph.CompleteBipartiteCopy
+public import Erdos593.Graph.CompleteBipartiteLayering
+public import Erdos593.Graph.CountableColoring
+public import Erdos593.Graph.FiniteClosureLayeringConstruction
+public import Mathlib.SetTheory.Cardinal.Order
 
 /-!
 # Minimal bad cores for the complete-bipartite graph lemma
@@ -10,6 +12,8 @@ import Mathlib.SetTheory.Cardinal.Order
 This module packages the cardinal-minimal-counterexample reduction and closes
 it using the singular-cardinal-safe finite-closure layering construction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseNode
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseNode
 
 /-!
 # Canonical normal forms for sequence-lift edges
@@ -7,6 +9,8 @@ The canonical base-node selector lets every lift edge be displayed using its
 own selected base node.  At that node the edge has exactly its two graph-base
 points; at every other node it has at most one point.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

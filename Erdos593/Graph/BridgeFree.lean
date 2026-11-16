@@ -1,10 +1,14 @@
-import Mathlib.Combinatorics.SimpleGraph.Acyclic
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Acyclic
 
 /-!
 # Deleting all bridge edges
 
 Finite graph infrastructure for the bridge-block decomposition of a Levi graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

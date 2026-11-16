@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.ErdosRado.CanonicalTrace
+module
+
+public import Erdos593.TripleSystem.ErdosRado.CanonicalTrace
 
 /-!
 # Local extension and reanchoring for canonical traces
@@ -9,6 +11,8 @@ reanchoring, and successor extension by an already supplied candidate.  It
 does not assert that arbitrary live prefixes have candidates, and it does not
 construct a global trace.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

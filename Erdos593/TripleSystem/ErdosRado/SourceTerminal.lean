@@ -1,5 +1,9 @@
-import Erdos593.TripleSystem.ErdosRado.SourceRunInvariant
-import Erdos593.TripleSystem.ErdosRado.SourceCoherence
+module
+
+public import Erdos593.TripleSystem.ErdosRado.SourceRunInvariant
+public import Erdos593.TripleSystem.ErdosRado.SourceCoherence
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

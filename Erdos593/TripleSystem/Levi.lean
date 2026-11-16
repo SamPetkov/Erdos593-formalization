@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Basic
-import Mathlib.Combinatorics.SimpleGraph.Basic
+module
+
+public import Erdos593.TripleSystem.Basic
+public import Mathlib.Combinatorics.SimpleGraph.Basic
 
 /-!
 # Levi graphs
@@ -7,6 +9,8 @@ import Mathlib.Combinatorics.SimpleGraph.Basic
 The Levi graph of a triple system has point-nodes on the left and hyperedge-nodes
 on the right, with adjacency given by incidence.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ErdosRado.TraceExtension
-import Mathlib.SetTheory.Ordinal.Rank
+module
+
+public import Erdos593.TripleSystem.ErdosRado.TraceExtension
+public import Mathlib.SetTheory.Ordinal.Rank
 
 /-!
 # Conditional canonical trace tree
@@ -10,6 +12,8 @@ principle, or state the eventual partition relation.  The construction of an
 inhabitant belongs upstream; reduced-color coding and its injectivity belong
 downstream.
 -/
+
+@[expose] public section
 
 namespace Erdos593.TripleSystem.TriangleHost.ErdosRado
 

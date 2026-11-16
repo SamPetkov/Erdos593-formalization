@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.BridgeBlockPackaging
-import Erdos593.TripleSystem.Constructive
-import Erdos593.TripleSystem.EdgeRestriction
+module
+
+public import Erdos593.TripleSystem.BridgeBlockPackaging
+public import Erdos593.TripleSystem.Constructive
+public import Erdos593.TripleSystem.EdgeRestriction
 
 /-!
 # Exact restrictions represented by active bridge-free blocks
@@ -12,6 +14,8 @@ point is vertex surjectivity: the support of those hyperedges consists exactly
 of the component's point-nodes together with the unique private point of each
 component hyperedge.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.ObligatoryDisjointUnion
-import Erdos593.TripleSystem.SequenceLift
-import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
+module
+
+public import Erdos593.TripleSystem.ObligatoryDisjointUnion
+public import Erdos593.TripleSystem.SequenceLift
+public import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
 
 /-!
 # Chromatic lower bound for the one-apex sequence lift
@@ -9,6 +11,8 @@ A proper countable colouring of the lift would recursively select an
 `ω₁`-long branch.  The common colours of the selected base edges must be
 pairwise distinct, giving an injection of `ω₁` into a countable type.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

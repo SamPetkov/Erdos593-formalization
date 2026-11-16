@@ -1,6 +1,8 @@
-import Erdos593.Graph.CompleteBipartite
-import Mathlib.Combinatorics.SimpleGraph.Copy
-import Mathlib.Data.Fintype.EquivFin
+module
+
+public import Erdos593.Graph.CompleteBipartite
+public import Mathlib.Combinatorics.SimpleGraph.Copy
+public import Mathlib.Data.Fintype.EquivFin
 
 /-!
 # Copies of balanced complete bipartite graphs
@@ -9,6 +11,8 @@ An explicit non-induced `K_{n,n}` copy is assembled from two disjoint finite
 families with all cross adjacencies. The common-neighbour formulation is the
 one used by the closure-chain proof of manuscript Lemma 2.1.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

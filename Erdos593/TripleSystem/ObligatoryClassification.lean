@@ -1,13 +1,17 @@
-import Erdos593.TripleSystem.TriangleHostRamseyUnconditional
-import Erdos593.TripleSystem.SequenceLiftMissingBridgeUnconditional
-import Erdos593.TripleSystem.ShiftGraphBergeObstruction
-import Erdos593.TripleSystem.ConstructiblePositiveObligatory
+module
+
+public import Erdos593.TripleSystem.TriangleHostRamseyUnconditional
+public import Erdos593.TripleSystem.SequenceLiftMissingBridgeUnconditional
+public import Erdos593.TripleSystem.ShiftGraphBergeObstruction
+public import Erdos593.TripleSystem.ConstructiblePositiveObligatory
 
 /-!
 # Finite obligatory triple-system classification
 
 The theorem is deliberately stated through the isolated reduction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

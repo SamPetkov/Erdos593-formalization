@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiber
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiber
 
 /-!
 # Source indices for canonical sequence-lift base fibres
@@ -9,6 +11,8 @@ local cardinality bridge between the fibre, its base-letter image, and that
 subtype of source-edge indices.  It deliberately does not assert a global
 decomposition over all base nodes.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

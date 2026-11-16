@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.Basic
+module
+
+public import Erdos593.TripleSystem.Basic
 
 /-!
 # Disjoint unions of triple systems
@@ -7,6 +9,8 @@ This file defines the binary disjoint union of two edge-indexed triple systems.
 Both vertices and edge indices are tagged by a sum, so incidences occur exactly
 within the corresponding summand.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

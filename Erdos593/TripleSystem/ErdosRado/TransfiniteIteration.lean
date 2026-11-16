@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ErdosRado.CanonicalTrace
-import Mathlib.Order.TransfiniteIteration
+module
+
+public import Erdos593.TripleSystem.ErdosRado.CanonicalTrace
+public import Mathlib.Order.TransfiniteIteration
 
 /-!
 # Transfinite set iteration for the Erdos--Rado trace route
@@ -9,6 +11,8 @@ canonical-trace route. It is deliberately generic: a later construction must
 supply the inflationary extension step and prove that its added trace nodes
 satisfy the required coloring invariants.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

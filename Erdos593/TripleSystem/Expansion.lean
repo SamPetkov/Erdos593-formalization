@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Basic
-import Mathlib.Combinatorics.SimpleGraph.Basic
+module
+
+public import Erdos593.TripleSystem.Basic
+public import Mathlib.Combinatorics.SimpleGraph.Basic
 
 /-!
 # Private-vertex expansions
@@ -11,6 +13,8 @@ its private point.
 
 No finiteness or decidable-equality hypothesis is needed for this construction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

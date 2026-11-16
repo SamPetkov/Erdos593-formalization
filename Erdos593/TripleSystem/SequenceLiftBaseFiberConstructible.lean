@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberExpansion
-import Erdos593.TripleSystem.Constructive
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberExpansion
+public import Erdos593.TripleSystem.Constructive
 
 /-!
 # Constructible linear sequence-lift base fibres
@@ -9,6 +11,8 @@ description of a linear sequence-lift base fibre to constructibility.  The
 extra two-colourability hypothesis is explicit: linearity alone does not make
 the canonical base-letter subgraph bipartite.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,6 +1,8 @@
-import Erdos593.Graph.CompleteBipartiteCopy
-import Erdos593.Graph.CountableColoring
-import Erdos593.Graph.FiniteClosureLayering
+module
+
+public import Erdos593.Graph.CompleteBipartiteCopy
+public import Erdos593.Graph.CountableColoring
+public import Erdos593.Graph.FiniteClosureLayering
 
 /-!
 # Closure layerings and complete-bipartite forcing
@@ -14,6 +16,8 @@ countably colourable.
 Constructing such a layering with small fibres is deliberately separate: it
 is the singular-cardinal-sensitive infinitary part of the argument.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

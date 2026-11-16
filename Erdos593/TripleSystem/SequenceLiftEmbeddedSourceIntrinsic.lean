@@ -1,6 +1,10 @@
-import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceEndpoints
-import Erdos593.TripleSystem.ConstructiveForward
-import Erdos593.TripleSystem.SequenceLiftChromatic
+module
+
+public import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceEndpoints
+public import Erdos593.TripleSystem.ConstructiveForward
+public import Erdos593.TripleSystem.SequenceLiftChromatic
+
+@[expose] public section
 
 namespace Erdos593
 

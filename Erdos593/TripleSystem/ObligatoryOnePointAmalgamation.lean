@@ -1,9 +1,11 @@
-import Erdos593.Graph.FiniteOutdegreeColoring
-import Erdos593.TripleSystem.ObligatoryDisjointUnion
-import Erdos593.TripleSystem.OnePointAmalgamation
-import Mathlib.Data.Nat.Find
-import Mathlib.Data.Nat.Pairing
-import Mathlib.Logic.Equiv.Fin.Basic
+module
+
+public import Erdos593.Graph.FiniteOutdegreeColoring
+public import Erdos593.TripleSystem.ObligatoryDisjointUnion
+public import Erdos593.TripleSystem.OnePointAmalgamation
+public import Mathlib.Data.Nat.Find
+public import Mathlib.Data.Nat.Pairing
+public import Mathlib.Logic.Equiv.Fin.Basic
 
 /-!
 # Rooted abundance and obligatory one-point amalgamation
@@ -15,6 +17,8 @@ abundance restriction of an uncountably chromatic host is still uncountably
 chromatic.  The final theorem combines an abundant rooted copy with an
 obligatory copy of the other factor.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

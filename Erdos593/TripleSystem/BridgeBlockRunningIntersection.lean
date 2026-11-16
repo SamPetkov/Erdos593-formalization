@@ -1,12 +1,14 @@
-import Erdos593.Graph.RootedTree
-import Erdos593.TripleSystem.BridgeBlockRestriction
-import Erdos593.TripleSystem.ConstructiveForward
-import Erdos593.TripleSystem.DegenerateBridgeBlock
-import Erdos593.TripleSystem.EdgeRestrictionFull
-import Erdos593.TripleSystem.EdgeRestrictionReconstruction
-import Erdos593.TripleSystem.Isolated
-import Mathlib.Data.Finset.Sort
-import Mathlib.Data.Prod.Lex
+module
+
+public import Erdos593.Graph.RootedTree
+public import Erdos593.TripleSystem.BridgeBlockRestriction
+public import Erdos593.TripleSystem.ConstructiveForward
+public import Erdos593.TripleSystem.DegenerateBridgeBlock
+public import Erdos593.TripleSystem.EdgeRestrictionFull
+public import Erdos593.TripleSystem.EdgeRestrictionReconstruction
+public import Erdos593.TripleSystem.Isolated
+public import Mathlib.Data.Finset.Sort
+public import Mathlib.Data.Prod.Lex
 
 /-!
 # Running intersection for bridge-free Levi blocks
@@ -23,6 +25,8 @@ piece first, its recursive assembly order is the reverse order: roots first,
 with nondecreasing depth.
 -/
 
+@[expose] public section
+
 namespace Erdos593
 
 universe u v w
@@ -36,10 +40,10 @@ variable {V : Type u} {E : Type v} (F : TripleSystem V E)
 variable [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E]
   [DecidableRel F.levi.Adj]
 
-private noncomputable abbrev core :=
+noncomputable abbrev core :=
   Erdos593.SimpleGraph.bridgeFree F.levi
 
-private noncomputable abbrev quotientForest :=
+noncomputable abbrev quotientForest :=
   Erdos593.SimpleGraph.bridgeQuotient F.levi
 
 /-- A bridge-free Levi component containing at least one hyperedge-node.

@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.ErdosRado.CanonicalTree
+module
+
+public import Erdos593.TripleSystem.ErdosRado.CanonicalTree
 
 /-!
 # Conditional canonical level codes
@@ -8,6 +10,8 @@ injectivity only under explicit endhomogeneity and genuine stopping
 hypotheses.  The missing source-native construction is responsible for
 building a system satisfying those hypotheses.
 -/
+
+@[expose] public section
 
 namespace Erdos593.TripleSystem.TriangleHost.ErdosRado
 namespace CoherentTraceSystem

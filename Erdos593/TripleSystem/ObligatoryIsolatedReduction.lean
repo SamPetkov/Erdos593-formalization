@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.Isolated
-import Erdos593.TripleSystem.ObligatoryDisjointUnion
-import Mathlib.Data.Countable.Basic
+module
+
+public import Erdos593.TripleSystem.Isolated
+public import Erdos593.TripleSystem.ObligatoryDisjointUnion
+public import Mathlib.Data.Countable.Basic
 
 /-!
 # Isolated vertices do not affect obligatoriness
@@ -12,6 +14,8 @@ extended by sending the finitely many isolated vertices injectively into the
 complement of its finite vertex image.  Since our embeddings are non-induced,
 no condition on host edges involving these new vertices is required.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

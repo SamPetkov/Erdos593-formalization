@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLift
+module
+
+public import Erdos593.TripleSystem.SequenceLift
 
 /-!
 # Canonical base nodes of sequence-lift edges
@@ -7,6 +9,8 @@ Every sequence-lift hyperedge has exactly one node containing its two
 base-graph vertices. This gives the canonical trace index for grouping finite
 edge restrictions.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,9 +1,11 @@
-import Erdos593.TripleSystem.HighPairAtomBridge
-import Erdos593.TripleSystem.HighPairEdgeColoring
-import Erdos593.TripleSystem.LowCodegreeLayering
-import Erdos593.TripleSystem.LowCrossingColoring
-import Erdos593.TripleSystem.LowEdgeRankClassification
-import Erdos593.TripleSystem.SameRankColoring
+module
+
+public import Erdos593.TripleSystem.HighPairAtomBridge
+public import Erdos593.TripleSystem.HighPairEdgeColoring
+public import Erdos593.TripleSystem.LowCodegreeLayering
+public import Erdos593.TripleSystem.LowCrossingColoring
+public import Erdos593.TripleSystem.LowEdgeRankClassification
+public import Erdos593.TripleSystem.SameRankColoring
 
 /-!
 # Assembly of the positive-atom colouring argument
@@ -14,6 +16,8 @@ rank fibre, and the remaining low edges, which contain an edge of the low
 crossing graph.  Each family has a countable colouring, and the standard
 natural-number pairing operation combines the three colourings.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

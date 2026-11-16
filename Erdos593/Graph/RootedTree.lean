@@ -1,4 +1,6 @@
-import Mathlib.Combinatorics.SimpleGraph.Acyclic
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Acyclic
 
 /-!
 # Rooted-tree geometry
@@ -6,6 +8,8 @@ import Mathlib.Combinatorics.SimpleGraph.Acyclic
 Depth and closed-star facts used by the running-intersection reconstruction of
 the bridge-block quotient forest.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

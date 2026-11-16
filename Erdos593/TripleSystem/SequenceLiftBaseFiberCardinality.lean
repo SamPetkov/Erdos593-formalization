@@ -1,5 +1,7 @@
-import Mathlib.Data.Set.Card.Arithmetic
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
+module
+
+public import Mathlib.Data.Set.Card.Arithmetic
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
 
 /-!
 # Finite cardinality decomposition of sequence-lift base fibres
@@ -12,6 +14,8 @@ subtypes of source-edge indices at each active base node.
 These are finite selected-edge identities only.  In particular, this module
 does not assert a global decomposition of base-letter images or of a trace.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

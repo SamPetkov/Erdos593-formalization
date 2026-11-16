@@ -1,4 +1,6 @@
-import Mathlib.Combinatorics.SimpleGraph.Coloring.Constructions
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Coloring.Constructions
 
 /-!
 # Cycle parity and bipartiteness
@@ -7,6 +9,8 @@ Mathlib characterizes two-colourability by evenness of every closed walk.  The
 finite structural proof naturally produces information about simple cycles, so
 we isolate the standard reduction from closed walks to simple cycles here.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.FiniteLiftGeneratedBridge
-import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceEndpoints
+module
+
+public import Erdos593.TripleSystem.FiniteLiftGeneratedBridge
+public import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceEndpoints
 
 /-!
 # Bridge obstruction for finite linear sources embedded in a sequence lift
@@ -9,6 +11,8 @@ finite linear embedded source. The generic finite-lift bridge invariant then
 turns that into the structural bridge-at-every-edge witness used by the
 classical classification obstruction side.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

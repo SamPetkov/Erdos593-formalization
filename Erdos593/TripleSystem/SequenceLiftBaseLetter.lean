@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseNormalForm
-import Erdos593.TripleSystem.SequenceLiftTrace
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseNormalForm
+public import Erdos593.TripleSystem.SequenceLiftTrace
 
 /-!
 # Canonical trace letters for sequence-lift edges
@@ -8,6 +10,8 @@ Each sequence-lift edge has a unique unordered graph-edge letter at its
 canonical base node.  Together with the canonical base node, that letter is a
 trace key which is injective on every linear edge restriction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

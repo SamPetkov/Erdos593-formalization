@@ -1,9 +1,11 @@
-import Erdos593.Graph.Parity
-import Erdos593.TripleSystem.DisjointUnion
-import Erdos593.TripleSystem.Expansion
-import Erdos593.TripleSystem.Isomorph
-import Erdos593.TripleSystem.Intrinsic
-import Erdos593.TripleSystem.OnePointAmalgamation
+module
+
+public import Erdos593.Graph.Parity
+public import Erdos593.TripleSystem.DisjointUnion
+public import Erdos593.TripleSystem.Expansion
+public import Erdos593.TripleSystem.Isomorph
+public import Erdos593.TripleSystem.Intrinsic
+public import Erdos593.TripleSystem.OnePointAmalgamation
 
 /-!
 # The finite constructive class
@@ -13,6 +15,8 @@ private-vertex expansions of finite two-colourable graphs, with closure under
 binary disjoint unions, one-point amalgamations, and isomorphism.  Binary
 constructors suffice because every construction term is finite.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

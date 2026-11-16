@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrder
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrder
 
 /-!
 # Constructible and obligatory endpoints for coherent base-fibre orders
@@ -8,6 +10,8 @@ ordering premise.  This module merely feeds its verified geometric consequence
 into the existing N5 assembly endpoints; it does not claim that linearity or
 the canonical active-base enumeration supplies that premise.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.ErdosRado.PairTransport
-import Erdos593.TripleSystem.ErdosRado.TraceLimit
-import Erdos593.TripleSystem.ErdosRado.ErdosRadoCardinalArithmetic
-import Mathlib.SetTheory.Cardinal.Pigeonhole
+module
+
+public import Erdos593.TripleSystem.ErdosRado.PairTransport
+public import Erdos593.TripleSystem.ErdosRado.TraceLimit
+public import Erdos593.TripleSystem.ErdosRado.ErdosRadoCardinalArithmetic
+public import Mathlib.SetTheory.Cardinal.Pigeonhole
 
 /-!
 # Lifting a full endhomogeneous trace to a homogeneous pair set
@@ -12,6 +14,8 @@ pair colouring is endhomogeneous to its endpoint, it extracts an uncountable
 homogeneous set.  It deliberately proves neither the existence of such a
 prefix nor the global Erdos--Rado theorem.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

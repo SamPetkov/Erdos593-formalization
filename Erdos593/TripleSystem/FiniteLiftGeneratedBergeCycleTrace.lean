@@ -1,9 +1,11 @@
-import Erdos593.TripleSystem.FiniteLiftGenerated
-import Erdos593.TripleSystem.DisjointUnionForward
-import Erdos593.TripleSystem.ForwardExpansion
-import Erdos593.TripleSystem.IsomorphIntrinsic
-import Erdos593.TripleSystem.OnePointAmalgamationIntrinsic
-import Erdos593.Graph.OddClosedWalk
+module
+
+public import Erdos593.TripleSystem.FiniteLiftGenerated
+public import Erdos593.TripleSystem.DisjointUnionForward
+public import Erdos593.TripleSystem.ForwardExpansion
+public import Erdos593.TripleSystem.IsomorphIntrinsic
+public import Erdos593.TripleSystem.OnePointAmalgamationIntrinsic
+public import Erdos593.Graph.OddClosedWalk
 
 /-!
 # Berge-cycle traces in a host graph
@@ -15,6 +17,8 @@ this information.  In particular, the host walk need not be a cycle: keeping
 closed walks here avoids an unnecessary cycle-extraction argument during the
 structural induction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

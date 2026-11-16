@@ -1,5 +1,7 @@
-import Erdos593.Graph.BridgeFree
-import Erdos593.TripleSystem.Intrinsic
+module
+
+public import Erdos593.Graph.BridgeFree
+public import Erdos593.TripleSystem.Intrinsic
 
 /-!
 # Bridge-deleted Levi components
@@ -7,6 +9,8 @@ import Erdos593.TripleSystem.Intrinsic
 Small glue lemmas connecting the intrinsic bridge condition on a triple system
 to the generic bridge-deletion results for finite simple graphs.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

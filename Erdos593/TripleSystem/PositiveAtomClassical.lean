@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.LowCodegreeLayering
-import Erdos593.TripleSystem.MinimalBadCore
-import Erdos593.TripleSystem.ObligatoryIsolatedReduction
-import Erdos593.TripleSystem.PositiveAtomColoringAssembly
+module
+
+public import Erdos593.TripleSystem.LowCodegreeLayering
+public import Erdos593.TripleSystem.MinimalBadCore
+public import Erdos593.TripleSystem.ObligatoryIsolatedReduction
+public import Erdos593.TripleSystem.PositiveAtomColoringAssembly
 
 /-!
 # The classical positive-atom endpoint
@@ -11,6 +13,8 @@ finite low-pair closure colouring assembly is available.  The public theorem
 has the same-universe host convention built into `IsObligatory`: both the
 vertex and edge types of a host for the `u`-universe atom lie in `Type u`.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

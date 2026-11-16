@@ -1,5 +1,7 @@
-import Erdos593.Graph.FiniteClosureLayeringConstruction
-import Erdos593.TripleSystem.LowCodegreeClosure
+module
+
+public import Erdos593.Graph.FiniteClosureLayeringConstruction
+public import Erdos593.TripleSystem.LowCodegreeClosure
 
 /-!
 # Layering the low-codegree completion closure
@@ -8,6 +10,8 @@ This module instantiates the finite closure-layering construction with the
 two-point low-codegree completion closure.  Its main local consequence is that
 a completion of a low pair cannot lie strictly after both endpoints.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

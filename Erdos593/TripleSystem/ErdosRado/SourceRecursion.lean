@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.ErdosRado.TraceGraph
+module
+
+public import Erdos593.TripleSystem.ErdosRado.TraceGraph
 
 /-!
 # The stopped source recursion
@@ -8,6 +10,8 @@ transfinitely.  A graph outside the image of `TracePrefix.graph` is left
 fixed.  Later modules prove the source-canonical invariant of runs from the
 empty graph; that invariant is not assumed by this definition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

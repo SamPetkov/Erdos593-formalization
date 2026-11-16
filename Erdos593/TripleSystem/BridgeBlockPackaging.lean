@@ -1,6 +1,10 @@
-import Erdos593.TripleSystem.BridgeBlockExpansion
-import Erdos593.TripleSystem.Embedding
-import Erdos593.TripleSystem.Expansion
+module
+
+public import Erdos593.TripleSystem.BridgeBlockExpansion
+public import Erdos593.TripleSystem.Embedding
+public import Erdos593.TripleSystem.Expansion
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -17,7 +21,7 @@ variable {V : Type u} {E : Type v} (F : TripleSystem V E)
 variable [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E]
   [DecidableRel F.levi.Adj]
 
-private noncomputable abbrev packagingCore :=
+noncomputable abbrev packagingCore :=
   Erdos593.SimpleGraph.bridgeFree F.levi
 
 /-- The unique contractible hyperedge represented by an edge of the

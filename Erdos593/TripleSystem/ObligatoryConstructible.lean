@@ -1,8 +1,10 @@
-import Erdos593.TripleSystem.Constructive
-import Erdos593.TripleSystem.ObligatoryAtoms
-import Erdos593.TripleSystem.ObligatoryBipartiteReduction
-import Erdos593.TripleSystem.ObligatoryDisjointUnion
-import Erdos593.TripleSystem.ObligatoryOnePointAmalgamation
+module
+
+public import Erdos593.TripleSystem.Constructive
+public import Erdos593.TripleSystem.ObligatoryAtoms
+public import Erdos593.TripleSystem.ObligatoryBipartiteReduction
+public import Erdos593.TripleSystem.ObligatoryDisjointUnion
+public import Erdos593.TripleSystem.ObligatoryOnePointAmalgamation
 
 /-!
 # Obligatory closure of the constructive class
@@ -11,6 +13,8 @@ This file packages the positive closure argument.  The infinitary content is
 isolated in the hypothesis that the finite two-colourable expansion atoms are
 obligatory; all remaining steps are the verified finite constructors.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

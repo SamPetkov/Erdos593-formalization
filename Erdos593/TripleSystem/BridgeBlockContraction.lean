@@ -1,5 +1,7 @@
-import Erdos593.Graph.BridgeQuotient
-import Erdos593.TripleSystem.BridgeBlocks
+module
+
+public import Erdos593.Graph.BridgeQuotient
+public import Erdos593.TripleSystem.BridgeBlocks
 
 /-!
 # Contracting bridge-free Levi components
@@ -8,6 +10,8 @@ Component-local infrastructure for the reverse structural direction.  A
 degree-two hyperedge-node in a component of the bridge-free Levi graph is
 contracted to an ordinary edge between its two point-neighbours.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

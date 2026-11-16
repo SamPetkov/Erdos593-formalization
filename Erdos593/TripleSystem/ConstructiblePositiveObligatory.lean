@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.CompleteBipartiteAtomObligatory
-import Erdos593.TripleSystem.BridgeBlockRunningIntersection
-import Erdos593.TripleSystem.ObligatoryConstructible
+module
+
+public import Erdos593.TripleSystem.CompleteBipartiteAtomObligatory
+public import Erdos593.TripleSystem.BridgeBlockRunningIntersection
+public import Erdos593.TripleSystem.ObligatoryConstructible
 
 /-!
 # Obligatory constructible triple systems
@@ -9,6 +11,8 @@ The all-parameter balanced complete-bipartite expansion atom theorem closes
 the finite constructive closure argument: every constructible triple system
 is obligatory.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

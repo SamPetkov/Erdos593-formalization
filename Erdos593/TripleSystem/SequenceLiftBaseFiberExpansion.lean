@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberFactor
-import Erdos593.TripleSystem.SequenceLiftBaseIncidence
-import Erdos593.TripleSystem.Expansion
-import Erdos593.TripleSystem.Isomorph
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberFactor
+public import Erdos593.TripleSystem.SequenceLiftBaseIncidence
+public import Erdos593.TripleSystem.Expansion
+public import Erdos593.TripleSystem.Isomorph
 
 /-!
 # Private-vertex expansions of linear sequence-lift base fibres
@@ -11,6 +13,8 @@ expansion of the graph selected by its canonical base letters.  The result is
 strictly local in the selected edge set and the selected base node.
 -/
 
+@[expose] public section
+
 namespace Erdos593
 
 universe u
@@ -19,7 +23,7 @@ namespace SequenceLift
 
 variable {V : Type u} {G : _root_.SimpleGraph V}
 
-private noncomputable def baseFiberExpansionEdgeEquiv_of_linear
+noncomputable def baseFiberExpansionEdgeEquiv_of_linear
     {S : Set (Edge G)} (q : Node G)
     (hlinear : ((system G).edgeRestriction S).Linear) :
     (baseLetterSubgraph G (baseLetter '' baseFiber S q)).coe.edgeSet ≃
@@ -57,7 +61,7 @@ private theorem baseFiberExpansionEdgeEquiv_core_mem_iff
     have hxy' : x = y := Subtype.ext hxy.symm
     simpa [hxy'] using hy
 
-private noncomputable def baseFiberExpansionPointEquiv_of_linear
+noncomputable def baseFiberExpansionPointEquiv_of_linear
     {S : Set (Edge G)} (q : Node G)
     (hlinear : ((system G).edgeRestriction S).Linear) :
     TripleSystem.PrivateVertexExpansion.Point

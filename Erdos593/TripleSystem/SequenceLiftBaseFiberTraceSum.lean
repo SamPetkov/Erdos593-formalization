@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberCardinality
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberCardinality
 
 /-!
 # Finite local-letter sums of sequence-lift base fibres
@@ -12,6 +14,8 @@ These statements sum separate fibres.  They neither identify base letters
 across different base nodes nor assert a global base-letter union or a full
 trace decomposition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

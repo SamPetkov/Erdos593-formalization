@@ -1,7 +1,9 @@
-import Mathlib.Combinatorics.SimpleGraph.Basic
-import Mathlib.Data.Fin.Basic
-import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.Tauto
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Basic
+public import Mathlib.Data.Fin.Basic
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Tactic.Tauto
 
 /-!
 # Finite shift graphs
@@ -11,6 +13,8 @@ Erdős Problem 593.  Vertices are strictly increasing finite tuples in a linear
 order.  Two tuples are joined when one is obtained by shifting the other one
 place along a common increasing tuple of length one greater.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

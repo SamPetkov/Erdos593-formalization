@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberAssembly
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupport
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberAssembly
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupport
 
 /-!
 # Running support orders for sequence-lift base fibres
@@ -10,6 +12,8 @@ assembly, the nonempty overlaps of a newly attached fibre with the already
 assembled tail must all be the same intersection.  The recursive predicate
 below records exactly that local coherence condition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

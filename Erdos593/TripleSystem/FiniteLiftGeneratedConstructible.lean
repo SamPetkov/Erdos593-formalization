@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ConstructiblePositiveObligatory
-import Erdos593.TripleSystem.FiniteLiftGenerated
+module
+
+public import Erdos593.TripleSystem.ConstructiblePositiveObligatory
+public import Erdos593.TripleSystem.FiniteLiftGenerated
 
 /-!
 # Positive consequences of host-relative finite generation
@@ -9,6 +11,8 @@ consequences when the ambient host graph is two-colourable.  The only local
 input at a graph-factor atom is its explicit adjacency-preserving factor map
 into the host; colourability pulls back along that map.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

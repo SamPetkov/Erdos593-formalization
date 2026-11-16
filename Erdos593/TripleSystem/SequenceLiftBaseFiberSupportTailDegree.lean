@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrder
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrder
 
 /-!
 # Tail-degree support orders for sequence-lift base fibres
@@ -7,6 +9,8 @@ This module records a simple, stronger sufficient condition for a coherent
 support running order: each newly attached base fibre has at most one
 support-overlap neighbour in the already assembled tail.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

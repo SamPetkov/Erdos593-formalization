@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.ErdosRado.CanonicalLevelCode
-import Mathlib.SetTheory.Cardinal.Continuum
-import Mathlib.SetTheory.Cardinal.Pigeonhole
+module
+
+public import Erdos593.TripleSystem.ErdosRado.CanonicalLevelCode
+public import Mathlib.SetTheory.Cardinal.Continuum
+public import Mathlib.SetTheory.Cardinal.Pigeonhole
 
 /-!
 # CH-free cardinal arithmetic for the canonical Erdos--Rado trace
@@ -11,6 +13,8 @@ Continuum Hypothesis.  Under explicit endhomogeneity and stopping hypotheses,
 the preceding module supplies level-code injectivity and this module completes
 the counting argument to obtain a full-height endpoint.
 -/
+
+@[expose] public section
 
 namespace Erdos593.TripleSystem.TriangleHost.ErdosRado
 

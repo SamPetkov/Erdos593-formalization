@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Intrinsic
-import Erdos593.TripleSystem.OnePointAmalgamation
+module
+
+public import Erdos593.TripleSystem.Intrinsic
+public import Erdos593.TripleSystem.OnePointAmalgamation
 
 /-!
 # Intrinsic conditions under one-point amalgamation
@@ -8,6 +10,8 @@ The canonical one-point amalgamation identifies exactly the two selected roots.
 This file proves that the intrinsic structural conditions are preserved by that
 operation.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

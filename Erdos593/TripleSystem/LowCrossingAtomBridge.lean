@@ -1,8 +1,10 @@
-import Erdos593.Graph.CompleteBipartiteCopy
-import Erdos593.TripleSystem.HighPairEdgeColoring
-import Erdos593.TripleSystem.ObligatoryAtoms
-import Erdos593.TripleSystem.RainbowLocalBound
-import Mathlib.Combinatorics.SimpleGraph.Copy
+module
+
+public import Erdos593.Graph.CompleteBipartiteCopy
+public import Erdos593.TripleSystem.HighPairEdgeColoring
+public import Erdos593.TripleSystem.ObligatoryAtoms
+public import Erdos593.TripleSystem.RainbowLocalBound
+public import Mathlib.Combinatorics.SimpleGraph.Copy
 
 /-!
 # The low-codegree crossing graph / positive-atom bridge
@@ -14,6 +16,8 @@ in this graph gives a finite grid of low edges.  The lower-rank condition
 keeps all selected completion vertices away from both core sides, while the
 low-edge condition supplies the local rainbow bound.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

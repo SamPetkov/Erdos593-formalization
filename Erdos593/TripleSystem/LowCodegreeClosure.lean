@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.HighPairGraph
-import Mathlib.Data.Finset.Card
+module
+
+public import Erdos593.TripleSystem.HighPairGraph
+public import Mathlib.Data.Finset.Card
 
 /-!
 # Finite completion closures below a pair-codegree threshold
@@ -11,6 +13,8 @@ least `t`, its completion set is finite, and its cardinality is strictly below
 finite-closure layering construction used in the low-codegree branch of the
 positive-atom strategy.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

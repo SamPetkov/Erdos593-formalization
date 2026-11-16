@@ -7,3 +7,4 @@
 *.ilean.*
 __pycache__/
 *.py[cod]
+/Erdos593SelfContained.lean

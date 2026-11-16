@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportForestOrderBridge
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportTailDegreeEndpoints
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportForestOrderBridge
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportTailDegreeEndpoints
 
 /-!
 # Constructibility endpoints from acyclic support-overlap graphs
@@ -9,6 +11,8 @@ supplies the tail-degree-one hypothesis required by the existing sequence-lift
 assembly endpoints.  The acyclicity premise is explicit: it is not inferred
 from linearity alone.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,7 +1,9 @@
-import Erdos593.Graph.CountableColoring
-import Erdos593.TripleSystem.Obligatory
-import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
-import Mathlib.Data.Nat.Pairing
+module
+
+public import Erdos593.Graph.CountableColoring
+public import Erdos593.TripleSystem.Obligatory
+public import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
+public import Mathlib.Data.Nat.Pairing
 
 /-!
 # Predicate-local colourings of triple systems
@@ -15,6 +17,8 @@ The graph bridge records the elementary but frequently used observation that a
 proper colouring of a graph colours every hyperedge which contains an edge of
 that graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

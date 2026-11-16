@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupport
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupport
 
 /-!
 # Branch geometry for sequence-lift base-fibre supports
@@ -8,6 +10,8 @@ cycles in the finite base-fibre/support incidence graph.  It deliberately
 contains no graph acyclicity conclusion: those cycle-level obligations remain
 in the dedicated incidence-acyclicity module.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

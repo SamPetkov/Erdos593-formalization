@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.EmbeddingLinearity
-import Erdos593.TripleSystem.Obligatory
+module
+
+public import Erdos593.TripleSystem.EmbeddingLinearity
+public import Erdos593.TripleSystem.Obligatory
 
 /-!
 # Nonlinearity obstruction to obligatoriness
@@ -9,6 +11,8 @@ cannot be obligatory whenever an uncountably chromatic linear host in the
 ambient universes is available.  Constructing such a host is intentionally a
 separate Erdős--Rado task.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

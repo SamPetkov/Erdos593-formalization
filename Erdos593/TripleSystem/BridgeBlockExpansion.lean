@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.BridgeBlockCycleLift
+module
+
+public import Erdos593.TripleSystem.BridgeBlockCycleLift
 
 /-!
 # Reconstructing expansion data inside bridge-free Levi blocks
@@ -6,6 +8,8 @@ import Erdos593.TripleSystem.BridgeBlockCycleLift
 The bridge-free incidences at a hyperedge-node form the two core incidences of
 an expansion edge.  The unique deleted incidence supplies its private point.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -22,7 +26,7 @@ variable {V : Type u} {E : Type v} (F : TripleSystem V E)
 variable [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E]
   [DecidableRel F.levi.Adj]
 
-private noncomputable abbrev expansionCore :=
+noncomputable abbrev expansionCore :=
   Erdos593.SimpleGraph.bridgeFree F.levi
 
 /-- Hyperedge-nodes lying in a bridge-free Levi component. -/
