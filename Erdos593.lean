@@ -164,6 +164,7 @@ public import Erdos593.TripleSystem.SequenceLiftTaggedBaseApexEquiv
 public import Erdos593.TripleSystem.SequenceLiftTaggedBaseApexSourceEquiv
 public import Erdos593.TripleSystem.SingleEdgePiece
 public import Erdos593.TripleSystem.SingleEdgePieceConstructible
+public import Erdos593.FCAdapter
 
 /-!
 # Erdős Problem 593
