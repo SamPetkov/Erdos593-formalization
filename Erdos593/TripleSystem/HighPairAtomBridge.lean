@@ -51,14 +51,14 @@ theorem highPairGrid_of_completeBipartiteNNCopy
         (Sum.inl (ULift.up i)) (Sum.inr (ULift.up j)) := by
       simp [completeBipartiteNN]
     have htgt : (highPairGraph H t).Adj (left i) (right j) := by
-      simpa [left, right] using f.toHom.map_adj hsrc
+      exact f.toHom.map_adj hsrc
     exact (highPairGraph_adj H t (left i) (right j)).mp htgt |>.1 h
   · intro i j
     have hsrc : (completeBipartiteNN.{u} n).Adj
         (Sum.inl (ULift.up i)) (Sum.inr (ULift.up j)) := by
       simp [completeBipartiteNN]
     have htgt : (highPairGraph H t).Adj (left i) (right j) := by
-      simpa [left, right] using f.toHom.map_adj hsrc
+      exact f.toHom.map_adj hsrc
     exact (highPairGraph_adj H t (left i) (right j)).mp htgt
 
 /-- One complete quadratic high-pair grid has a globally rainbow apex map,

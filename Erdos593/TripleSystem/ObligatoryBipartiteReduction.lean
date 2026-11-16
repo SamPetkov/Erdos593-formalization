@@ -118,17 +118,16 @@ def privateVertexExpansionEmbeddingOfCopy
             _root_.SimpleGraph.Hom.mapEdgeSet]
           constructor
           · rintro (h | h)
-            · exact Or.inl h.symm
-            · exact Or.inr h.symm
+            · exact Or.inl h
+            · exact Or.inr h
           · rintro (h | h)
-            · exact Or.inl h.symm
-            · exact Or.inr h.symm
+            · exact Or.inl h
+            · exact Or.inr h
         · simp [Function.Embedding.sumMap, PrivateVertexExpansion.core,
             PrivateVertexExpansion.Inc,
             PrivateVertexExpansion.privateVertex,
             _root_.SimpleGraph.Copy.mapEdgeSet,
             _root_.SimpleGraph.Hom.mapEdgeSet]
-          constructor <;> intro h <;> exact h.symm
 
 /-- The isolated reduction of a finite two-colourable graph expansion embeds
 in the corresponding balanced complete-bipartite expansion.  Passing through

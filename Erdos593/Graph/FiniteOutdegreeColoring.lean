@@ -1,6 +1,7 @@
 module
 
 public import Mathlib.Combinatorics.Compactness
+public import Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 public import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
 public import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
@@ -163,7 +164,7 @@ theorem finite_properColoring (targets : α → Finset α) (d : ℕ)
             exact Finset.mem_filter.mpr ⟨hz, hyz.symm, hadj⟩
           have hcz : color z ∈ used := by
             exact Finset.mem_image.mpr ⟨z, hzmem, rfl⟩
-          simp only [color', if_pos rfl, if_neg hyz.symm]
+          simp only [color', ite_eq_left rfl, ite_eq_right hyz.symm]
           intro heq
           apply hfresh
           rw [heq]
@@ -174,12 +175,12 @@ theorem finite_properColoring (targets : α → Finset α) (d : ℕ)
               exact Finset.mem_filter.mpr ⟨hy, hyx, hadj.elim Or.inr Or.inl⟩
             have hcy : color y ∈ used := by
               exact Finset.mem_image.mpr ⟨y, hymem, rfl⟩
-            simp only [color', if_neg hyx, if_pos rfl]
+            simp only [color', ite_eq_right hyx, ite_eq_left rfl]
             intro heq
             apply hfresh
             rw [← heq]
             exact hcy
-          · simp only [color', if_neg hyx, if_neg hzx]
+          · simp only [color', ite_eq_right hyx, ite_eq_right hzx]
             apply hcolor
             · simpa [Finset.mem_erase, hyx] using hy
             · simpa [Finset.mem_erase, hzx] using hz

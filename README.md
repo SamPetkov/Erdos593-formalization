@@ -76,7 +76,7 @@ All Lean sources use Lean's module system. The generated one-file closure
 preserved in
 [`SamPetkov/Erdos593`](https://github.com/SamPetkov/Erdos593/tree/d834f1f42e7e0d5d2a6c23e9487563bedb1b277b/formalization).
 
-The project is pinned to Lean/mathlib `v4.32.0`. GitHub Actions treats warnings
+The project is pinned to Lean/mathlib `v4.35.0`. GitHub Actions treats warnings
 as errors, checks deterministic regeneration, runs focused modules, and audits
 for proof placeholders and project-specific axioms.
 

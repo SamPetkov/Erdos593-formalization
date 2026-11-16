@@ -113,10 +113,10 @@ theorem countablyColorable_of_finite_back_neighbors
     intro x y hxy hne
     rcases lt_or_gt_of_ne hne with hxyRank | hyxRank
     · right
-      simp only [targets, Set.Finite.mem_toFinset, Set.mem_setOf_eq]
+      simp only [targets, Set.Finite.mem_toFinset, Set.mem_ofPred_eq]
       exact ⟨hxy.symm, hxyRank⟩
     · left
-      simp only [targets, Set.Finite.mem_toFinset, Set.mem_setOf_eq]
+      simp only [targets, Set.Finite.mem_toFinset, Set.mem_ofPred_eq]
       exact ⟨hxy, hyxRank⟩
   let crossGraph : _root_.SimpleGraph V :=
     _root_.SimpleGraph.fromRel fun x y ↦ G.Adj x y ∧ rank x ≠ rank y
@@ -136,7 +136,7 @@ theorem countablyColorable_of_finite_back_neighbors
   have hfiberColor (i : I) {x y : V} (hxy : G.Adj x y)
       (hx : rank x = i) (hy : rank y = i) :
       fiberColor i x ≠ fiberColor i y := by
-    simp only [fiberColor, dif_pos hx, dif_pos hy]
+    simp only [fiberColor, dite_eq_left hx, dite_eq_left hy]
     exact (layerColor i).valid hxy
   let within : V → ℕ := fun x ↦ fiberColor (rank x) x
   have hwithin : ∀ {x y : V}, G.Adj x y → rank x = rank y →

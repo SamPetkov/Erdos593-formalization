@@ -74,9 +74,8 @@ noncomputable def sourceCoherentTraceSystem (c : TraceColoring) :
         apply (Ordinal.ToType.mk
           (o := (terminalPrefix c a).length)).symm.injective
         apply Subtype.ext
-        rw [(terminalPrefix c a).restrictIndex_toOrd,
-          terminalIndex_toOrd]
-        exact hkord
+        exact ((terminalPrefix c a).restrictIndex_toOrd _ k).trans
+          (hkord.trans (terminalIndex_toOrd c a hzetaParent).symm)
 
 @[simp]
 theorem sourceCoherentTraceSystem_height (c : TraceColoring) (a : TraceCarrier) :
@@ -149,8 +148,7 @@ theorem sourceCoherentTraceSystem_levelTracePrefix
       apply (Ordinal.ToType.mk
         (o := (terminalPrefix c a.1).length)).symm.injective
       apply Subtype.ext
-      rw [terminalIndex_toOrd]
-      exact hxi'.symm
+      exact (terminalIndex_toOrd c a.1 _).trans hxi'.symm
   · rintro ⟨xi, rfl⟩
     let xi' : rho.ToType := Ordinal.ToType.mk
       ⟨(xi.toOrd : Ordinal), by
@@ -165,8 +163,7 @@ theorem sourceCoherentTraceSystem_levelTracePrefix
       apply (Ordinal.ToType.mk
         (o := (terminalPrefix c a.1).length)).symm.injective
       apply Subtype.ext
-      rw [terminalIndex_toOrd]
-      exact hxi'.symm
+      exact hxi'.symm.trans (terminalIndex_toOrd c a.1 _).symm
 
 /-- Every level prefix in the packaged source system is genuinely stopped. -/
 theorem sourceCoherentTraceSystem_stopped

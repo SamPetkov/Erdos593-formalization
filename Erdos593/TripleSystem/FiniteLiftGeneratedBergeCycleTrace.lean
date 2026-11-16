@@ -197,7 +197,8 @@ theorem amalgam
     all_goals
       simp [f₀, f₁, root,
         OnePointAmalgamation.leftLeviEmbedding,
-        OnePointAmalgamation.rightLeviEmbedding] at hb ⊢ <;> aesop
+        OnePointAmalgamation.rightLeviEmbedding] at hb ⊢
+    all_goals aesop
   have hadj : ∀ ⦃a b⦄,
       (OnePointAmalgamation.amalgam F₀ F₁ r₀ r₁).levi.Adj a b →
       (a ∈ A ∧ b ∈ A) ∨ (a ∈ B ∧ b ∈ B) := by

@@ -25,7 +25,7 @@ def HostOrder (r : ℕ) : Type u :=
   (Order.succ (ℶ_ ((r - 1 : ℕ) : Ordinal.{u}))).ord.ToType
 
 noncomputable instance (r : ℕ) : LinearOrder (HostOrder r) :=
-  linearOrder_toType _
+  inferInstanceAs (LinearOrder (Order.succ (ℶ_ ((r - 1 : ℕ) : Ordinal.{u}))).ord.ToType)
 
 /-- The canonical host graph for an odd-closed-walk cutoff `m`. -/
 noncomputable def hostGraph (m : ℕ) : SimpleGraph (Tuple (HostOrder (m + 1)) (m + 1)) :=

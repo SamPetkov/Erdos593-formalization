@@ -48,7 +48,7 @@ theorem graph_restrict {a : TraceCarrier} (p : TracePrefix a)
   ext z
   constructor
   · rintro ⟨ξ, rfl⟩
-    refine ⟨?_, Set.mem_setOf.mpr (Set.mem_Iio.mp ξ.toOrd.2)⟩
+    refine ⟨?_, Set.mem_ofPred.mpr (Set.mem_Iio.mp ξ.toOrd.2)⟩
     refine ⟨p.restrictIndex hη ξ, ?_⟩
     apply Prod.ext
     · exact (p.restrictIndex_toOrd hη ξ).symm
@@ -77,7 +77,7 @@ theorem graph_restrict_succ {a : TraceCarrier} (p : TracePrefix a)
           ⟨eta, (Order.lt_succ eta).trans_le heta⟩))} := by
   rw [graph_restrict, graph_restrict]
   ext z
-  simp only [Set.mem_inter_iff, Set.mem_setOf_eq, Set.mem_union,
+  simp only [Set.mem_inter_iff, Set.mem_ofPred_eq, Set.mem_union,
     Set.mem_singleton_iff]
   constructor
   · rintro ⟨hz, hzsucc⟩

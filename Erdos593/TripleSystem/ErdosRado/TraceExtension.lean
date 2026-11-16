@@ -81,7 +81,7 @@ theorem EndhomogeneousTo.reanchor {c : TraceColoring} {a b : TraceCarrier}
         c (tracePair (p.node ξ) b (ne_of_lt (hnode ξ)))) :
     (p.reanchor b hnode).EndhomogeneousTo c := by
   intro ξ ζ hξζ
-  simpa only [reanchor_node] using (hp hξζ).trans (hcode ξ)
+  exact (hp hξζ).trans (hcode ξ)
 
 /-- Reanchor a prefix at one of its candidates.  The candidate axioms give
 exactly the new upper bound and the colour-code compatibility needed below. -/
@@ -176,11 +176,9 @@ theorem restrictIndex_comp {α : TraceCarrier} (p : TracePrefix α)
       p.restrictIndex (hθ.trans hη) ξ := by
   apply (Ordinal.ToType.mk (o := p.length)).symm.injective
   apply Subtype.ext
-  rw [p.restrictIndex_toOrd hη]
-  rw [p.restrictIndex_toOrd (hθ.trans hη)]
-  unfold restrictIndex
-  exact congrArg Subtype.val
-    ((Ordinal.ToType.mk (o := (p.restrict η hη).length)).left_inv _)
+  exact (p.restrictIndex_toOrd hη ((p.restrict η hη).restrictIndex hθ ξ)).trans
+    (((p.restrict η hη).restrictIndex_toOrd hθ ξ).trans
+      (p.restrictIndex_toOrd (hθ.trans hη) ξ).symm)
 
 /-- Nested restrictions agree pointwise with the corresponding direct
 restriction. This is the usable dependent-index composition law. -/
@@ -189,8 +187,7 @@ theorem restrict_restrict_node {α : TraceCarrier} (p : TracePrefix α)
     (ξ : θ.ToType) :
     ((p.restrict η hη).restrict θ hθ).node ξ =
       (p.restrict θ (hθ.trans hη)).node ξ := by
-  rw [restrict_node, restrict_node p hη, restrict_node p (hθ.trans hη),
-    restrictIndex_comp]
+  exact congrArg p.node (p.restrictIndex_comp hη hθ ξ)
 
 /-- Restricting the index inclusion preserves strict order. -/
 theorem restrictIndex_lt {α : TraceCarrier} (p : TracePrefix α)
@@ -217,7 +214,7 @@ theorem EndhomogeneousTo.restrict {c : TraceColoring} {α : TraceCarrier}
     {η : Ordinal} (hη : η ≤ p.length) :
     (p.restrict η hη).EndhomogeneousTo c := by
   intro ξ ζ hξζ
-  simpa only [restrict_node] using hp (p.restrictIndex_lt hη hξζ)
+  exact hp (p.restrictIndex_lt hη hξζ)
 
 end TracePrefix
 
@@ -238,8 +235,7 @@ theorem eligible_atCandidate_iff {c : TraceColoring} {a : TraceCarrier}
         simpa only [TracePrefix.atCandidate_lowerBound] using h.lowerBound_le
       agrees := by
         intro ξ
-        simpa only [TracePrefix.atCandidate_node] using
-          (h.agrees ξ).trans (q.agrees ξ)
+        exact (h.agrees ξ).trans (q.agrees ξ)
     }
   · rintro ⟨h, hβq⟩
     refine {
@@ -248,8 +244,7 @@ theorem eligible_atCandidate_iff {c : TraceColoring} {a : TraceCarrier}
         simpa only [TracePrefix.atCandidate_lowerBound] using h.lowerBound_le
       agrees := by
         intro ξ
-        simpa only [TracePrefix.atCandidate_node] using
-          (h.agrees ξ).trans (q.agrees ξ).symm
+        exact (h.agrees ξ).trans (q.agrees ξ).symm
     }
 
 /-- Transport an old candidate below `q` to the prefix reanchored at `q`. -/
@@ -427,12 +422,8 @@ noncomputable def restrict {c : TraceColoring} {α : TraceCarrier}
   live := hη.trans_lt q.live
   value := q.value
   lt_anchor := q.lt_anchor
-  above_prefix ξ := by
-    rw [TracePrefix.restrict_node]
-    exact q.above_prefix (p.restrictIndex hη ξ)
-  agrees ξ := by
-    simpa only [TracePrefix.restrict_node] using
-      q.agrees (p.restrictIndex hη ξ)
+  above_prefix ξ := q.above_prefix (p.restrictIndex hη ξ)
+  agrees ξ := q.agrees (p.restrictIndex hη ξ)
 
 @[simp]
 theorem restrict_value {c : TraceColoring} {α : TraceCarrier}

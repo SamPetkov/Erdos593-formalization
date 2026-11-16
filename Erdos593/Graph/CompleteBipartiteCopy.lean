@@ -107,7 +107,7 @@ theorem commonNeighborSet_finite_of_no_completeBipartiteNNCopy {n : ℕ}
   let S := commonNeighborSet G left
   have hno := no_embedding_commonNeighbors_of_no_completeBipartiteNNCopy G hfree left
   by_contra hfinite
-  letI : Infinite S := Set.infinite_coe_iff.mpr hfinite
+  let : Infinite S := Set.infinite_coe_iff.mpr hfinite
   let finToNat : FiniteBipartitePart.{u} n ↪ ℕ :=
     (Equiv.ulift.{u, 0}.toEmbedding).trans Fin.valEmbedding
   let right : FiniteBipartitePart.{u} n ↪ S :=
@@ -171,13 +171,13 @@ theorem exists_finEmbeddings_of_completeBipartiteNNCopy {q : Nat}
         (Sum.inl (ULift.up i)) (Sum.inr (ULift.up j)) := by
       simp [completeBipartiteNN]
     have htgt : G.Adj (left i) (right j) := by
-      simpa [left, right] using f.toHom.map_adj hsrc
+      exact f.toHom.map_adj hsrc
     exact G.loopless.irrefl (left i) (h ▸ htgt)
   · intro i j
     have hsrc : (completeBipartiteNN.{u} q).Adj
         (Sum.inl (ULift.up i)) (Sum.inr (ULift.up j)) := by
       simp [completeBipartiteNN]
-    simpa [left, right] using f.toHom.map_adj hsrc
+    exact f.toHom.map_adj hsrc
 
 end SimpleGraph
 

@@ -8,7 +8,7 @@ public import Erdos593.TripleSystem.EdgeRestrictionFull
 public import Erdos593.TripleSystem.EdgeRestrictionReconstruction
 public import Erdos593.TripleSystem.Isolated
 public import Mathlib.Data.Finset.Sort
-public import Mathlib.Data.Prod.Lex
+public import Mathlib.Order.Prod.Lex.Basic
 
 /-!
 # Running intersection for bridge-free Levi blocks
@@ -201,13 +201,13 @@ noncomputable def rootedHyperedgeComponentList : List (HyperedgeComponent F) := 
 theorem mem_rootedHyperedgeComponentList (C : HyperedgeComponent F) :
     C ∈ rootedHyperedgeComponentList F := by
   classical
-  letI := hyperedgeComponentLinearOrder F
+  let := hyperedgeComponentLinearOrder F
   simp [rootedHyperedgeComponentList]
 
 theorem rootedHyperedgeComponentList_nodup :
     (rootedHyperedgeComponentList F).Nodup := by
   classical
-  letI := hyperedgeComponentLinearOrder F
+  let := hyperedgeComponentLinearOrder F
   simp [rootedHyperedgeComponentList]
 
 /-- Earlier recursive pieces have no greater rooted depth than the new head
@@ -218,7 +218,7 @@ theorem rootedHyperedgeComponentList_pairwise_depth :
         quotientTreeComponent F D = quotientTreeComponent F C →
           componentDepth F D ≤ componentDepth F C) := by
   classical
-  letI := hyperedgeComponentLinearOrder F
+  let := hyperedgeComponentLinearOrder F
   have hsorted :
       (Finset.univ.sort (fun C D : HyperedgeComponent F => D ≤ C)).Pairwise
         (fun C D => D ≤ C) :=
@@ -292,7 +292,7 @@ private theorem eq_of_adj_of_dist_add_one_in_forest
   have hpCX : (pC.concat hCX).IsPath := hpC.concat hXnotC hCX
   have hpDX : (pD.concat hDX).IsPath := hpD.concat hXnotD hDX
   have hpaths : pC.concat hCX = pD.concat hDX := by
-    exact Subtype.mk.inj (hG.path_unique ⟨_, hpCX⟩ ⟨_, hpDX⟩)
+    exact Subtype.mk.inj ((hG.subsingleton_path _ _).elim ⟨_, hpCX⟩ ⟨_, hpDX⟩)
   have hpenultimate := congrArg (fun p => p.penultimate) hpaths
   simpa using hpenultimate
 
@@ -750,8 +750,8 @@ theorem isolatedReduction_constructible_iff_intrinsic
     [Fintype X] [Fintype I] [DecidableEq X] [DecidableEq I] :
     Constructible K.isolatedReduction ↔ K.isolatedReduction.Intrinsic := by
   classical
-  letI : Fintype K.NonIsolatedPoint := Fintype.ofFinite _
-  letI : DecidableRel K.isolatedReduction.levi.Adj := Classical.decRel _
+  let : Fintype K.NonIsolatedPoint := Fintype.ofFinite _
+  let : DecidableRel K.isolatedReduction.levi.Adj := Classical.decRel _
   exact constructible_iff_intrinsic_of_hasNoIsolatedPoints
     K.isolatedReduction K.isolatedReduction_hasNoIsolatedPoints
 

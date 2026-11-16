@@ -96,7 +96,7 @@ noncomputable def system {V : Type u} (G : _root_.SimpleGraph V) :
   Inc p e := p ∈ e.1
   edge_ncard e := by
     rcases e.2 with ⟨q, t, x, y, z, hxy, hext, hset⟩
-    simp only [Set.setOf_mem_eq]
+    simp only [Set.ofPred_mem_eq]
     rw [hset]
     have hqt : q ≠ t := Node.ne_of_extendsBy hext
     apply ncard_triple
@@ -106,7 +106,7 @@ noncomputable def system {V : Type u} (G : _root_.SimpleGraph V) :
   simple := by
     intro e f h
     apply Subtype.ext
-    simpa only [Set.setOf_mem_eq] using h
+    simpa only [Set.ofPred_mem_eq] using h
 
 @[simp]
 theorem inc_mkEdge_iff {V : Type u} {G : _root_.SimpleGraph V}

@@ -117,7 +117,7 @@ theorem aleph0_lt_chromaticCardinal
   refine ⟨x, hx, y, hy, ?_⟩
   intro hdown
   apply hxy
-  exact ULift.ext _ _ hdown
+  exact ULift.ext hdown
 
 end SequenceLift
 

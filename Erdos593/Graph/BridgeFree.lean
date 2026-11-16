@@ -106,6 +106,7 @@ lemma bridgeFree_degree_lt_of_adj_isBridge [Fintype V] [DecidableEq V]
   have hwG : w ∈ G.neighborFinset v := by
     simpa using hvw
   have hwH : w ∉ H.neighborFinset v := by
+    rw [_root_.SimpleGraph.mem_neighborFinset]
     simp [H, bridgeFree, hvw, hb]
   have hssub : H.neighborFinset v ⊂ G.neighborFinset v := by
     rw [Finset.ssubset_iff_subset_ne]

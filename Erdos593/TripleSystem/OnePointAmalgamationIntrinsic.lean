@@ -470,7 +470,8 @@ theorem amalgam_evenBergeCycles
     rcases a with x | e <;> rcases b with y | f
     all_goals
       simp [f₀, f₁, root, leftLeviEmbedding,
-        rightLeviEmbedding] at hb ⊢ <;> aesop
+        rightLeviEmbedding] at hb ⊢
+    all_goals aesop
   have hadj : ∀ ⦃a b⦄, (amalgam F₀ F₁ r₀ r₁).levi.Adj a b →
       (a ∈ A ∧ b ∈ A) ∨ (a ∈ B ∧ b ∈ B) := by
     intro a b hab
