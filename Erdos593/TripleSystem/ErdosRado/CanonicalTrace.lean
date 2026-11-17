@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.ErdosRadoCarrier
+module
+
+public import Erdos593.TripleSystem.ErdosRadoCarrier
 
 /-!
 # Canonical ordinal carrier for the Erdos--Rado trace
@@ -7,6 +9,8 @@ This module provides a canonical carrier plus local data interfaces needed by
 a later trace construction. It proves no partition relation, candidate
 existence, coherent recursion, or global trace.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem
@@ -218,7 +222,7 @@ def valueSet (c : TraceColoring) {α : TraceCarrier} (p : TracePrefix α) :
 theorem eligible_iff_mem_valueSet {c : TraceColoring}
     {α : TraceCarrier} (p : TracePrefix α) (β : TraceCarrier) :
     p.length < TraceHeight ∧ Eligible c p β ↔ β ∈ valueSet c p := by
-  simpa only [valueSet, Set.mem_setOf_eq] using
+  simpa only [valueSet, Set.mem_ofPred_eq] using
     (eligible_iff_exists_candidate_value (c := c) p β)
 
 /-- Candidate existence is exactly liveness together with existence of a

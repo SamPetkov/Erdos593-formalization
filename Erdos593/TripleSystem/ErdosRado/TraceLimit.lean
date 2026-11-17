@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.ErdosRado.TraceExtension
+module
+
+public import Erdos593.TripleSystem.ErdosRado.TraceExtension
 
 /-!
 # Coherent limit prefixes for canonical traces
@@ -10,6 +12,8 @@ forms their diagonal union.  It can also package all restrictions of an
 existing prefix as a coherent chain.  It does not construct candidates or a
 global trace recursion.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem
@@ -67,12 +71,13 @@ noncomputable def ofPrefix {α : TraceCarrier} (p : TracePrefix α)
         (p.restrict θ.toOrd hθ).length := hord
     refine ⟨hlen, ?_⟩
     intro ξ
-    simp only [liftIndex, TracePrefix.restrict_node]
+    show p.node (p.restrictIndex hθ (liftIndex hlen ξ)) = p.node (p.restrictIndex hη ξ)
     apply congrArg p.node
     apply (Ordinal.ToType.mk (o := p.length)).symm.injective
     apply Subtype.ext
-    rw [p.restrictIndex_toOrd, p.restrictIndex_toOrd]
-    exact (p.restrict θ.toOrd hθ).restrictIndex_toOrd hlen ξ
+    exact (p.restrictIndex_toOrd hθ (liftIndex hlen ξ)).trans
+      (((p.restrict θ.toOrd hθ).restrictIndex_toOrd hlen ξ).trans
+        (p.restrictIndex_toOrd hη ξ).symm)
 
 /-- The stage immediately after an index, available because the target
 ordinal is a successor-limit ordinal. -/
@@ -196,7 +201,6 @@ theorem stage_isInitialSegment_limitPrefix {α : TraceCarrier} {o : Ordinal}
   calc
     F.indexAt (liftIndex hlen ξ) hξη =
         Ordinal.ToType.mk ξ.toOrd := by
-      rw [indexAt]
       apply congrArg (Ordinal.ToType.mk (o := (F.stage η).length))
       apply Subtype.ext
       exact liftIndex_toOrd hlen ξ

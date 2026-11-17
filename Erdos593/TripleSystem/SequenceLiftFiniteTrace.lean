@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseLetter
-import Erdos593.TripleSystem.FiniteLinearImageTrace
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseLetter
+public import Erdos593.TripleSystem.FiniteLinearImageTrace
 
 /-!
 # Finite canonical trace keys for sequence lifts
@@ -13,6 +15,8 @@ canonical trace key per source edge.
 The results are deliberately local to a specified linear restriction; they do
 not assert global finiteness of arbitrary sequence-lift trace systems.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

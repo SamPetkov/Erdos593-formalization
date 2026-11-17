@@ -1,5 +1,7 @@
-import Erdos593.Graph.CompleteBipartite
-import Mathlib.Combinatorics.SimpleGraph.Bipartite
+module
+
+public import Erdos593.Graph.CompleteBipartite
+public import Mathlib.Combinatorics.SimpleGraph.Bipartite
 
 /-!
 # Coordinates of edges in a balanced complete bipartite graph
@@ -10,6 +12,8 @@ universe-compatible atom used by the formalization.  It is the graph-level
 API needed when a rainbow matrix is packaged as an embedding of a
 private-vertex expansion.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.TriangleHostRamsey
-import Erdos593.TripleSystem.NonlinearObstruction
-import Erdos593.TripleSystem.ObligatoryDisjointUnion
+module
+
+public import Erdos593.TripleSystem.TriangleHostRamsey
+public import Erdos593.TripleSystem.NonlinearObstruction
+public import Erdos593.TripleSystem.ObligatoryDisjointUnion
 
 /-!
 # A universe-exact triangle-host Ramsey transport
@@ -11,6 +13,8 @@ and edge universes of an arbitrary source system. It converts the conditional
 therefore into the existing nonlinearity obstruction. It does not construct a
 Ramsey witness or prove an Erdos--Rado partition relation.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -78,7 +82,7 @@ theorem exactSystem_linear (κ : Type) [DecidableEq κ] :
   apply TriangleHost.linear κ
   · intro hdown
     apply hef
-    exact ULift.ext _ _ hdown
+    exact ULift.ext hdown
   · change (TriangleHost.system κ).Inc x.down e.down at hxe
     exact hxe
   · change (TriangleHost.system κ).Inc x.down f.down at hxf
@@ -133,8 +137,8 @@ theorem not_isObligatory_of_not_linear_of_exactTriangleHost
     (κ : Type) [DecidableEq κ]
     (hRamsey : TriangleHost.PairRamseyTriangle κ) :
     ¬ F.IsObligatory := by
-  letI : DecidableEq (TriangleHost.Pair κ) := inferInstance
-  letI : DecidableEq (ULift.{u} (TriangleHost.Pair κ)) := inferInstance
+  let : DecidableEq (TriangleHost.Pair κ) := inferInstance
+  let : DecidableEq (ULift.{u} (TriangleHost.Pair κ)) := inferInstance
   apply not_isObligatory_of_not_linear_of_linear_highChromatic
     (H := exactSystem.{u, v} κ)
   · exact hnotlinear

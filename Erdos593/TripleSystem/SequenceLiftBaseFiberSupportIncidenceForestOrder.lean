@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportForestOrder
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportForestOrder
 
 /-!
 # Dynamic leaf orders for bipartite incidence forests
@@ -13,6 +15,8 @@ forest: many left vertices may share one common right vertex.
 The sequence-lift-specific incidence graph is connected to this generic core
 in a later module.
 -/
+
+@[expose] public section
 
 namespace SimpleGraph
 
@@ -105,7 +109,7 @@ theorem IsAcyclic.exists_bipartiteLeftVertex_adj_unique
   have hs : s.Nonempty := by
     obtain ⟨a, ha⟩ := ht
     exact ⟨.inl a, (mem_bipartitePruneVertices_inl r t a).mpr ha⟩
-  letI : Nonempty s := hs.to_subtype
+  let : Nonempty s := hs.to_subtype
   obtain ⟨q, hq⟩ :=
     SimpleGraph.IsAcyclic.exists_vertex_adj_unique
       (hG.induce (↑s : Set (A ⊕ P)))

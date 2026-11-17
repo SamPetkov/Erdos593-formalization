@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportTailDegree
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrderEndpoints
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportTailDegree
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrderEndpoints
 
 /-!
 # Constructible and obligatory endpoints for tail-degree base-fibre orders
@@ -8,6 +10,8 @@ This module feeds the stronger tail-degree-one support order directly into the
 existing coherent-order endpoints.  It makes no claim that the required order
 is supplied by linearity or by the canonical active-base enumeration.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

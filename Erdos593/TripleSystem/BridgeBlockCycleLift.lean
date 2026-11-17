@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.BridgeBlockContraction
-import Erdos593.Graph.Parity
+module
+
+public import Erdos593.TripleSystem.BridgeBlockContraction
+public import Erdos593.Graph.Parity
 
 /-!
 # Lifting cycles from contracted bridge-free blocks
@@ -10,6 +12,8 @@ point-hyperedge-point segment lifts walks, paths, and cycles back to the Levi
 graph.  The resulting length-doubling statement transfers even-Berge-cycle
 parity to ordinary cycle parity in the contracted graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -26,7 +30,7 @@ variable {V : Type u} {E : Type v} (F : TripleSystem V E)
 variable [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E]
   [DecidableRel F.levi.Adj]
 
-private noncomputable abbrev B := Erdos593.SimpleGraph.bridgeFree F.levi
+noncomputable abbrev B := Erdos593.SimpleGraph.bridgeFree F.levi
 
 /-- Canonical hyperedge witness for an edge of the contracted graph. -/
 noncomputable def edgeWitness (hlinear : F.Linear) {C : Component F}

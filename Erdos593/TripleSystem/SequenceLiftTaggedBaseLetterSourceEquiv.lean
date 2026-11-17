@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftTaggedBaseLetterEquiv
+module
+
+public import Erdos593.TripleSystem.SequenceLiftTaggedBaseLetterEquiv
 
 /-!
 # Tagged base-letter equivalence for embedded source edges
@@ -8,6 +10,8 @@ canonically equivalent to the sigma of the separate local base-letter images.
 The active base-node tag remains present, so no letters from distinct fibres
 are identified and no untagged union or trace decomposition is asserted.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

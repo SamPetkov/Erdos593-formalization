@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberIndex
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberIndex
 
 /-!
 # Canonical base-fibre support for sequence lifts
@@ -9,6 +11,8 @@ partition and the finite support inherited from a finite selected family.  In
 particular, it supplies neither a finite trace decomposition nor a cardinality
 sum over the fibres.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

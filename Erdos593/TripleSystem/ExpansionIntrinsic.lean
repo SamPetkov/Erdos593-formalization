@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Expansion
-import Erdos593.TripleSystem.Intrinsic
+module
+
+public import Erdos593.TripleSystem.Expansion
+public import Erdos593.TripleSystem.Intrinsic
 
 /-!
 # Intrinsic bridge property of private-vertex expansions
@@ -7,6 +9,8 @@ import Erdos593.TripleSystem.Intrinsic
 The private point of each expanded edge is a leaf in the Levi graph, so its
 incidence with the corresponding hyperedge-node is an actual bridge.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

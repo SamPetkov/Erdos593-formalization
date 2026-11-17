@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.Constructive
-import Erdos593.TripleSystem.EdgeRestriction
-import Erdos593.TripleSystem.SingleEdgePiece
-import Mathlib.Combinatorics.SimpleGraph.Finite
+module
+
+public import Erdos593.TripleSystem.Constructive
+public import Erdos593.TripleSystem.EdgeRestriction
+public import Erdos593.TripleSystem.SingleEdgePiece
+public import Mathlib.Combinatorics.SimpleGraph.Finite
 
 /-!
 # Constructibility of canonical one-edge pieces
@@ -12,6 +14,8 @@ This file identifies that triple with the private-vertex expansion of the
 canonical graph `K₂`, and identifies it with the exact one-edge restriction
 of the ambient triple system.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -75,7 +79,7 @@ theorem oneEdgeGraph_colorable_two : oneEdgeGraph.{w}.Colorable 2 := by
 theorem oneEdgeExpansion_vertex_card :
     Fintype.card (PrivateVertexExpansion.Point oneEdgeGraph.{w}) = 3 := by
   have hedge : Fintype.card oneEdgeGraph.{w}.edgeSet = 1 := by
-    letI : Unique oneEdgeGraph.{w}.edgeSet :=
+    let : Unique oneEdgeGraph.{w}.edgeSet :=
       { default := oneEdgeGraphEdge.{w}
         uniq := oneEdgeGraph_edge_eq }
     exact Fintype.card_unique
@@ -86,7 +90,7 @@ theorem oneEdgeExpansion_vertex_card :
 /-- The expansion of `K₂` has one edge. -/
 theorem oneEdgeExpansion_edge_card :
     Fintype.card (PrivateVertexExpansion.Edge oneEdgeGraph.{w}) = 1 := by
-  letI : Unique oneEdgeGraph.{w}.edgeSet :=
+  let : Unique oneEdgeGraph.{w}.edgeSet :=
     { default := oneEdgeGraphEdge.{w}
       uniq := oneEdgeGraph_edge_eq }
   exact Fintype.card_unique

@@ -1,13 +1,17 @@
-import Erdos593.TripleSystem.TriangleHostRamseyUnconditional
-import Erdos593.TripleSystem.SequenceLiftMissingBridgeUnconditional
-import Erdos593.TripleSystem.ShiftGraphBergeObstruction
-import Erdos593.TripleSystem.ConstructiblePositiveObligatory
+module
+
+public import Erdos593.TripleSystem.TriangleHostRamseyUnconditional
+public import Erdos593.TripleSystem.SequenceLiftMissingBridgeUnconditional
+public import Erdos593.TripleSystem.ShiftGraphBergeObstruction
+public import Erdos593.TripleSystem.ConstructiblePositiveObligatory
 
 /-!
 # Finite obligatory triple-system classification
 
 The theorem is deliberately stated through the isolated reduction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -41,8 +45,8 @@ theorem isObligatory_iff_constructible_isolatedReduction
     F.IsObligatory ↔ Constructible F.isolatedReduction := by
   rw [isObligatory_iff_isolatedReduction_intrinsic]
   classical
-  letI : DecidableEq V := Classical.decEq V
-  letI : DecidableEq E := Classical.decEq E
+  let : DecidableEq V := Classical.decEq V
+  let : DecidableEq E := Classical.decEq E
   exact (BridgeBlock.isolatedReduction_constructible_iff_intrinsic F).symm
 
 end TripleSystem

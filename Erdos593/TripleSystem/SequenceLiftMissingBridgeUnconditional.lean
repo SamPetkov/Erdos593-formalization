@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ErdosRadoCarrier
-import Erdos593.TripleSystem.SequenceLiftMissingBridgeObstruction
+module
+
+public import Erdos593.TripleSystem.ErdosRadoCarrier
+public import Erdos593.TripleSystem.SequenceLiftMissingBridgeObstruction
 
 /-!
 # Unconditional missing-bridge obstruction
@@ -9,6 +11,8 @@ proper colouring by natural numbers.  It therefore supplies a concrete host
 for the sequence-lift obstruction: a finite linear triple system whose
 isolated reduction misses an incident Levi bridge is not obligatory.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

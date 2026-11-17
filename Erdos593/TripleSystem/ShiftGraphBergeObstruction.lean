@@ -1,11 +1,15 @@
-import Erdos593.Graph.ShiftGraphHost
-import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceEndpoints
-import Erdos593.TripleSystem.SequenceLiftChromatic
-import Erdos593.TripleSystem.FiniteLiftGeneratedBergeCycleTrace
+module
+
+public import Erdos593.Graph.ShiftGraphHost
+public import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceEndpoints
+public import Erdos593.TripleSystem.SequenceLiftChromatic
+public import Erdos593.TripleSystem.FiniteLiftGeneratedBergeCycleTrace
 
 /-!
 # Odd Berge-cycle obstruction from shift-graph hosts
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

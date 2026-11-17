@@ -1,4 +1,6 @@
-import Mathlib.Data.Set.Card
+module
+
+public import Mathlib.Data.Set.Card
 
 /-!
 # Triple systems
@@ -8,6 +10,8 @@ indices make the Levi graph live on the transparent sum type `V ⊕ E`, while th
 external finiteness assumptions used by the structural theorem can be added as
 typeclasses without changing the representation needed for later infinite hosts.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,6 +1,8 @@
-import Erdos593.Graph.CompleteBipartite
-import Mathlib.Combinatorics.SimpleGraph.Copy
-import Mathlib.Data.Fintype.EquivFin
+module
+
+public import Erdos593.Graph.CompleteBipartite
+public import Mathlib.Combinatorics.SimpleGraph.Copy
+public import Mathlib.Data.Fintype.EquivFin
 
 /-!
 # Copies of balanced complete bipartite graphs
@@ -9,6 +11,8 @@ An explicit non-induced `K_{n,n}` copy is assembled from two disjoint finite
 families with all cross adjacencies. The common-neighbour formulation is the
 one used by the closure-chain proof of manuscript Lemma 2.1.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -103,7 +107,7 @@ theorem commonNeighborSet_finite_of_no_completeBipartiteNNCopy {n : ℕ}
   let S := commonNeighborSet G left
   have hno := no_embedding_commonNeighbors_of_no_completeBipartiteNNCopy G hfree left
   by_contra hfinite
-  letI : Infinite S := Set.infinite_coe_iff.mpr hfinite
+  let : Infinite S := Set.infinite_coe_iff.mpr hfinite
   let finToNat : FiniteBipartitePart.{u} n ↪ ℕ :=
     (Equiv.ulift.{u, 0}.toEmbedding).trans Fin.valEmbedding
   let right : FiniteBipartitePart.{u} n ↪ S :=
@@ -167,13 +171,13 @@ theorem exists_finEmbeddings_of_completeBipartiteNNCopy {q : Nat}
         (Sum.inl (ULift.up i)) (Sum.inr (ULift.up j)) := by
       simp [completeBipartiteNN]
     have htgt : G.Adj (left i) (right j) := by
-      simpa [left, right] using f.toHom.map_adj hsrc
+      exact f.toHom.map_adj hsrc
     exact G.loopless.irrefl (left i) (h ▸ htgt)
   · intro i j
     have hsrc : (completeBipartiteNN.{u} q).Adj
         (Sum.inl (ULift.up i)) (Sum.inr (ULift.up j)) := by
       simp [completeBipartiteNN]
-    simpa [left, right] using f.toHom.map_adj hsrc
+    exact f.toHom.map_adj hsrc
 
 end SimpleGraph
 

@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.ErdosRado.CanonicalTree
+module
+
+public import Erdos593.TripleSystem.ErdosRado.CanonicalTree
 
 /-!
 # Conditional canonical level codes
@@ -8,6 +10,8 @@ injectivity only under explicit endhomogeneity and genuine stopping
 hypotheses.  The missing source-native construction is responsible for
 building a system satisfying those hypotheses.
 -/
+
+@[expose] public section
 
 namespace Erdos593.TripleSystem.TriangleHost.ErdosRado
 namespace CoherentTraceSystem
@@ -114,9 +118,8 @@ theorem levelTracePrefix_endhomogeneous (hend : T.IsEndhomogeneous)
   intro xi zeta hxizeta
   have hord : levelIndex rho xi < levelIndex rho zeta :=
     (Ordinal.ToType.mk (o := rho)).symm.lt_iff_lt.mpr hxizeta
-  simpa only [levelTracePrefix_node, levelNode] using
-    hend a.1 (T.levelIndex_lt_height rho a xi)
-      (T.levelIndex_lt_height rho a zeta) hord
+  exact hend a.1 (T.levelIndex_lt_height rho a xi)
+    (T.levelIndex_lt_height rho a zeta) hord
 
 /-- The coloring code of an endpoint at a fixed supplied trace height. -/
 noncomputable def levelCode (rho : Ordinal) (a : T.level rho) :
@@ -193,7 +196,8 @@ theorem traceCandidate_of_lt_of_levelCode_eq
     agrees := ?_
   }⟩
   · intro zeta
-    rw [T.levelTracePrefix_node, ← hnodes zeta]
+    show T.levelNode rho b zeta < a.1
+    rw [← hnodes zeta]
     exact T.levelNode_lt_anchor rho a zeta
   · intro zeta
     have hnode := hnodes zeta

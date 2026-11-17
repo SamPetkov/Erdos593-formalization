@@ -1,5 +1,7 @@
-import Erdos593.Graph.Bridge
-import Erdos593.TripleSystem.Levi
+module
+
+public import Erdos593.Graph.Bridge
+public import Erdos593.TripleSystem.Levi
 
 /-!
 # Intrinsic structural conditions
@@ -9,6 +11,8 @@ a genuine Levi-graph bridge at each hyperedge-node, and even Berge-cycle length.
 A Berge cycle of length `k` is represented by a Levi cycle of length `2 * k`, so
 even Berge length is encoded by divisibility of the Levi-cycle length by four.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

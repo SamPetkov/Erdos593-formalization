@@ -1,5 +1,14 @@
 # Self-Contained Lean Build and Verification
 
+> **Note.** `Erdos593SelfContained.lean` is not committed in this repository:
+> Palomar's source rules cap every committed `.lean` file at 10,000 lines and
+> require Lean's module system. The generated file (24,641 lines, built from
+> the pre-module-system sources) is preserved in
+> [`SamPetkov/Erdos593`](https://github.com/SamPetkov/Erdos593/tree/d834f1f42e7e0d5d2a6c23e9487563bedb1b277b/formalization).
+> The description below refers to that file. `scripts/generate_self_contained.py`
+> was written for the pre-module-system sources and has not been updated for
+> the `module`/`public import` headers used here.
+
 ## Authoritative status
 
 `Erdos593SelfContained.lean` is the deterministic one-file source closure of

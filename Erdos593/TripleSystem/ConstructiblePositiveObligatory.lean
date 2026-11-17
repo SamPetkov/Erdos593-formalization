@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.CompleteBipartiteAtomObligatory
-import Erdos593.TripleSystem.BridgeBlockRunningIntersection
-import Erdos593.TripleSystem.ObligatoryConstructible
+module
+
+public import Erdos593.TripleSystem.CompleteBipartiteAtomObligatory
+public import Erdos593.TripleSystem.BridgeBlockRunningIntersection
+public import Erdos593.TripleSystem.ObligatoryConstructible
 
 /-!
 # Obligatory constructible triple systems
@@ -9,6 +11,8 @@ The all-parameter balanced complete-bipartite expansion atom theorem closes
 the finite constructive closure argument: every constructible triple system
 is obligatory.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -31,10 +35,10 @@ theorem intrinsic_isolatedReduction_isObligatory
     {V E : Type u} (F : TripleSystem V E) [Finite V] [Finite E]
     (hF : F.isolatedReduction.Intrinsic) : F.IsObligatory := by
   classical
-  letI : Fintype V := Fintype.ofFinite V
-  letI : Fintype E := Fintype.ofFinite E
-  letI : DecidableEq V := Classical.decEq V
-  letI : DecidableEq E := Classical.decEq E
+  let : Fintype V := Fintype.ofFinite V
+  let : Fintype E := Fintype.ofFinite E
+  let : DecidableEq V := Classical.decEq V
+  let : DecidableEq E := Classical.decEq E
   apply IsObligatory.of_isolatedReduction
   apply Constructible.isObligatory
   exact (BridgeBlock.isolatedReduction_constructible_iff_intrinsic F).mpr hF

@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftTaggedBaseApexEquiv
+module
+
+public import Erdos593.TripleSystem.SequenceLiftTaggedBaseApexEquiv
 
 /-!
 # Tagged apex-image equivalence for embedded sequence lifts
@@ -7,6 +9,8 @@ For an embedding into a sequence lift, linearity of the embedded edge image
 identifies the source edge type with the sigma of the canonical-apex images
 of its separate canonical base fibres. The active base-node tag is retained.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

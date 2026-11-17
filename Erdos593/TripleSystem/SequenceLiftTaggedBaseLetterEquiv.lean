@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberEquiv
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberEquiv
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIndex
 
 /-!
 # Tagged base-letter equivalence for sequence lifts
@@ -11,6 +13,8 @@ equal base letters from different fibres are never identified here.  In
 particular, this module does not construct an untagged global base-letter
 union or a trace decomposition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

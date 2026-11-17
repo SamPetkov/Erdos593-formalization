@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Intrinsic
-import Erdos593.TripleSystem.Isomorph
+module
+
+public import Erdos593.TripleSystem.Intrinsic
+public import Erdos593.TripleSystem.Isomorph
 
 /-!
 # Isomorphism invariance of the intrinsic conditions
@@ -8,6 +10,8 @@ The finite reconstruction is naturally obtained only up to simultaneous
 vertex and edge relabelling.  This file packages the corresponding Levi-graph
 isomorphism and proves that each intrinsic condition is invariant.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

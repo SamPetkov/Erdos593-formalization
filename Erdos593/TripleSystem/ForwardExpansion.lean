@@ -1,5 +1,7 @@
-import Erdos593.Graph.Parity
-import Erdos593.TripleSystem.ExpansionIntrinsic
+module
+
+public import Erdos593.Graph.Parity
+public import Erdos593.TripleSystem.ExpansionIntrinsic
 
 /-!
 # Forward properties of private-vertex expansions
@@ -7,6 +9,8 @@ import Erdos593.TripleSystem.ExpansionIntrinsic
 The generator side of the finite structural theorem starts with the elementary
 intrinsic properties of the private-vertex expansion of a simple graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -98,7 +102,8 @@ theorem exists_graph_walk_of_privateVertexExpansion_walk {V : Type u}
                     (_root_.SimpleGraph.Walk.isTrail_cons hxw
                       (_root_.SimpleGraph.Walk.cons hew r)).mp hp |>.2
                   apply hnot
-                  simp [PrivateVertexExpansion.core, Sym2.eq_swap]
+                  rw [_root_.SimpleGraph.Walk.edges_cons]
+                  exact List.mem_cons.mpr (Or.inl Sym2.eq_swap)
                 have heq : (e : Sym2 V) = s(x, x') :=
                   (Sym2.mem_and_mem_iff hxx').mp ⟨hxe, hx'e⟩
                 have hxx'Edge : s(x, x') ∈ G.edgeSet := by

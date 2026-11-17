@@ -1,5 +1,9 @@
-import Erdos593.TripleSystem.PairCodegree
-import Mathlib.Combinatorics.SimpleGraph.Basic
+module
+
+public import Erdos593.TripleSystem.PairCodegree
+public import Mathlib.Combinatorics.SimpleGraph.Basic
+
+@[expose] public section
 
 namespace Erdos593
 

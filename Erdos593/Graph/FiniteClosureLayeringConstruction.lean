@@ -1,9 +1,11 @@
-import Erdos593.Graph.FiniteClosureLayering
-import Erdos593.Graph.FiniteClosureCardinality
-import Mathlib.Data.Finset.Max
-import Mathlib.Order.WellFounded
-import Mathlib.SetTheory.Cardinal.Basic
-import Mathlib.SetTheory.Cardinal.Arithmetic
+module
+
+public import Erdos593.Graph.FiniteClosureLayering
+public import Erdos593.Graph.FiniteClosureCardinality
+public import Mathlib.Data.Finset.Max
+public import Mathlib.Order.WellFounded
+public import Mathlib.SetTheory.Cardinal.Basic
+public import Mathlib.SetTheory.Cardinal.Arithmetic
 
 /-!
 # Constructing finite closure layerings from closed covers
@@ -17,6 +19,8 @@ The ordinal wrapper below converts any monotone, locally small finite-output
 hull into such a cover. Together with `FiniteClosureCardinality`, this also
 gives the singular-cardinal-safe construction for countable finite closures.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

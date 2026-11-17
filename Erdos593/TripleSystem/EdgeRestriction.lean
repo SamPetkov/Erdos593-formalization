@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.Embedding
+module
+
+public import Erdos593.TripleSystem.Embedding
 
 /-!
 # Edge restrictions
@@ -7,6 +9,8 @@ For reconstruction, a set of source hyperedges determines an exact subsystem
 on the union of their incident vertices.  The canonical embedding records this
 subsystem as a non-induced copy in the ambient triple system.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

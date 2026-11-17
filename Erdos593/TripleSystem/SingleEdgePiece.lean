@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.Embedding
+module
+
+public import Erdos593.TripleSystem.Embedding
 
 /-!
 # Canonical one-edge pieces
@@ -7,6 +9,8 @@ Hyperedge-nodes isolated after bridge deletion still contribute a one-edge
 piece.  This module packages the edge as a triple system on its three incident
 points and embeds that piece back into the ambient system.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

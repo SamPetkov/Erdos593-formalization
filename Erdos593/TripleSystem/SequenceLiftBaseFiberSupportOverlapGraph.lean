@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportTailDegree
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportTailDegree
 
 /-!
 # The finite support-overlap graph of sequence-lift base fibres
@@ -9,6 +11,8 @@ vertex-supports overlap.  This is only vocabulary for the ordering bridge:
 it does not assert acyclicity.  In particular, linearity supplies pairwise
 singleton-or-empty overlaps, but does not itself rule out cycles in this graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

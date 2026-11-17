@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseIncidence
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseIncidence
 
 /-!
 # Pairwise support geometry of sequence-lift base fibres
@@ -10,6 +12,8 @@ running-intersection condition required to assemble an arbitrary finite list
 of fibres, since several singleton overlaps can still accumulate in one
 assembly step.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

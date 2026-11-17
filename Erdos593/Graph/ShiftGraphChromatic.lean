@@ -1,8 +1,10 @@
-import Erdos593.Graph.ShiftGraph
-import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
-import Mathlib.Order.Fin.Basic
-import Mathlib.SetTheory.Cardinal.Aleph
-import Mathlib.Tactic
+module
+
+public import Erdos593.Graph.ShiftGraph
+public import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
+public import Mathlib.Order.Fin.Basic
+public import Mathlib.SetTheory.Cardinal.Aleph
+public import Mathlib.Tactic
 
 /-!
 # Chromatic growth of finite shift graphs
@@ -12,6 +14,8 @@ graphs.  A coloring of the shift graph on `(r + 1)`-tuples induces a coloring
 of the graph on `r`-tuples whose colors are sets of old colors.  Iterating the
 construction reduces to the complete graph on increasing one-tuples.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

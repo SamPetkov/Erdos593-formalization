@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.EmbeddingEdgeRestriction
+module
+
+public import Erdos593.TripleSystem.EmbeddingEdgeRestriction
 
 /-!
 # Linearity reflected by triple-system embeddings
@@ -7,6 +9,8 @@ Although triple-system embeddings are non-induced, they carry each source
 edge exactly onto a selected target edge.  Consequently target linearity
 reflects back to the source.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

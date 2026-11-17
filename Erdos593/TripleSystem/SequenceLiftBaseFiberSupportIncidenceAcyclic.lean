@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportBranchGeometry
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceGraph
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportBranchGeometry
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceGraph
 
 /-!
 # Acyclicity of base-fibre support incidence graphs
@@ -10,6 +12,8 @@ would propagate one initial base letter all the way around its fibre-side
 vertices.  The two boundary support points would consequently arise from the
 same base-fibre edge, contradicting simplicity of the cycle.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -157,7 +161,6 @@ private theorem incidence_getVert_even_is_node
       intro hk
       have hbound : 2 * k + 2 ≤ r.length := by
         convert hk using 1
-        all_goals omega
       rcases ih (by omega) with ⟨u, hu⟩
       have hmid : (baseFiberSupportIncidenceGraph S).Adj
           (.inl u) (r.getVert (2 * k + 1)) := by
@@ -297,7 +300,7 @@ theorem baseFiberSupportIncidenceGraph_isAcyclic_of_finite_linear
       c.support}
   have hQ : Q.Nonempty := by
     refine ⟨q0, ?_⟩
-    simpa only [Q, Set.mem_setOf_eq] using hq0
+    simpa only [Q, Set.mem_ofPred_eq] using hq0
   let q : activeBaseNodeIndex S :=
     Function.argminOn (fun q : activeBaseNodeIndex S => q.1.length) Q hQ
   have hq : (.inl q : activeBaseNodeIndex S ⊕ activeBaseFiberSupportPointIndex S) ∈

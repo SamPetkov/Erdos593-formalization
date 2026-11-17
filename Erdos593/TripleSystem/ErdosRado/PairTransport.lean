@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.CardinalPairPartition
+module
+
+public import Erdos593.TripleSystem.CardinalPairPartition
 
 /-!
 # Pair-colouring transport for the Erdos--Rado plan
@@ -7,6 +9,8 @@ This module isolates the same-universe reindexing facts used to transport
 pair colourings and homogeneous vertex sets across an equivalence. It makes
 no Erdos--Rado assertion.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

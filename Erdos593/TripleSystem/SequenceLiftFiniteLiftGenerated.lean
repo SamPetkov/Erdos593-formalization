@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.FiniteLiftGenerated
-import Erdos593.TripleSystem.SequenceLiftBaseFiberAssembly
-import Erdos593.TripleSystem.SequenceLiftBaseFiberExpansion
+module
+
+public import Erdos593.TripleSystem.FiniteLiftGenerated
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberAssembly
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberExpansion
 
 /-!
 # Host-relative finite generation for linear sequence-lift restrictions
@@ -15,6 +17,8 @@ The assembly geometry remains explicit.  This file proves only the finite
 linear base-fibre conclusion under a supplied compatible order; it makes no
 claim that linearity alone provides such an order.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -54,7 +58,7 @@ theorem baseFiber_finiteLiftGenerated_of_linear
   obtain ⟨inst, hfactor, hiso⟩ :=
     exists_fintype_baseFiberLetterSubgraphFactorExpansionIso_of_linear
       hS q hlinear
-  letI : Fintype
+  let : Fintype
       (baseLetterSubgraph G (baseLetter '' baseFiber S q)).verts := inst
   rcases hfactor with ⟨factor⟩
   rcases hiso with ⟨iso⟩

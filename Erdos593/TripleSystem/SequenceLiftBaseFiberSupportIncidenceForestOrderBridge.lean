@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceForestOrder
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceGraph
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrder
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceForestOrder
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceGraph
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrder
 
 /-!
 # From incidence forests to coherent base-fibre orders
@@ -16,6 +18,8 @@ The incidence-acyclicity hypothesis remains explicit.  In particular, this
 module does not replace it by pairwise linearity or by acyclicity of the
 stronger projected support-overlap graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -170,8 +174,8 @@ theorem exists_baseFiberSupportTailOverlapCoherent_order_of_incidenceAcyclic
         (∀ e, e ∈ S → baseNode e ∈ nodes) ∧
         baseFiberSupportTailOverlapCoherent S nodes := by
   classical
-  letI : Fintype (activeBaseNodeIndex S) := activeBaseNodeIndexFintype hS
-  letI : Fintype (activeBaseFiberSupportPointIndex S) :=
+  let : Fintype (activeBaseNodeIndex S) := activeBaseNodeIndexFintype hS
+  let : Fintype (activeBaseFiberSupportPointIndex S) :=
     activeBaseFiberSupportPointIndexFintype hS
   have hG :
       (SimpleGraph.bipartiteIncidenceGraph

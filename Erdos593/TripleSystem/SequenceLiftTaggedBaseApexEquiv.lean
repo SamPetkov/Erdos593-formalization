@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseApexEquiv
-import Erdos593.TripleSystem.SequenceLiftTaggedBaseLetterEquiv
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseApexEquiv
+public import Erdos593.TripleSystem.SequenceLiftTaggedBaseLetterEquiv
 
 /-!
 # Tagged apex-image equivalence for sequence lifts
@@ -9,6 +11,8 @@ to the sigma type of the canonical-apex images of their separate canonical
 base fibres. The active base-node tag is retained, so this creates neither an
 untagged union nor a cross-fibre identification.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberConstructible
-import Erdos593.TripleSystem.ConstructiblePositiveObligatory
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberConstructible
+public import Erdos593.TripleSystem.ConstructiblePositiveObligatory
 
 /-!
 # Obligatory linear sequence-lift base fibres
@@ -9,6 +11,8 @@ once a finite linear base fibre has a two-colourable canonical base-letter
 subgraph, its private-vertex-expansion description makes it constructible and
 hence obligatory.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

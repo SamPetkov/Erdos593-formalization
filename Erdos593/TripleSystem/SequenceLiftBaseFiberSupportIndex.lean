@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberPartition
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberPartition
 
 /-!
 # Finite active-base indexing for sequence-lift fibres
@@ -8,6 +10,8 @@ nodes and gives the finite support bound induced by a finite embedded source.
 It does not assert a fibre-cardinality sum or a global finite-trace
 decomposition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

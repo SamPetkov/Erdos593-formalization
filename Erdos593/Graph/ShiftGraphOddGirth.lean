@@ -1,5 +1,7 @@
-import Erdos593.Graph.OddClosedWalk
-import Erdos593.Graph.ShiftGraph
+module
+
+public import Erdos593.Graph.OddClosedWalk
+public import Erdos593.Graph.ShiftGraph
 
 /-!
 # Odd girth of finite shift graphs
@@ -10,6 +12,8 @@ minimal.  Both incident edges then point away from that tuple.  After deleting
 those two edges, projection to the first `r - 1` coordinates gives an odd
 closed walk two edges shorter in the lower-dimensional shift graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -135,10 +139,10 @@ theorem odd_cycle_length_ge :
         let q : (graph κ r).Walk (initTuple κ y) (initTuple κ y) :=
           (p.dropLast.map (prefixHom κ hrpos)).copy rfl hpref.symm
         have hqlen : q.length = c.length - 2 := by
-          have htail := d.length_tail_add_one hdnotnil
-          simp only [q, SimpleGraph.Walk.length_map, SimpleGraph.Walk.length_copy,
-            SimpleGraph.Walk.length_dropLast]
-          simp only [p] at htail ⊢
+          have htail : p.length + 1 = d.length := d.length_tail_add_one hdnotnil
+          have hq : q.length = p.length - 1 := by
+            refine ((p.dropLast.map (prefixHom κ hrpos)).length_copy rfl hpref.symm).trans ?_
+            rw [SimpleGraph.Walk.length_map, SimpleGraph.Walk.length_dropLast]
           omega
         have hqodd : Odd q.length := by
           obtain ⟨k, hk⟩ := hodd

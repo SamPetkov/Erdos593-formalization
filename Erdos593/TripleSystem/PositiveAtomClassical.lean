@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.LowCodegreeLayering
-import Erdos593.TripleSystem.MinimalBadCore
-import Erdos593.TripleSystem.ObligatoryIsolatedReduction
-import Erdos593.TripleSystem.PositiveAtomColoringAssembly
+module
+
+public import Erdos593.TripleSystem.LowCodegreeLayering
+public import Erdos593.TripleSystem.MinimalBadCore
+public import Erdos593.TripleSystem.ObligatoryIsolatedReduction
+public import Erdos593.TripleSystem.PositiveAtomColoringAssembly
 
 /-!
 # The classical positive-atom endpoint
@@ -11,6 +13,8 @@ finite low-pair closure colouring assembly is available.  The public theorem
 has the same-universe host convention built into `IsObligatory`: both the
 vertex and edge types of a host for the `u`-universe atom lie in `Type u`.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -42,7 +46,7 @@ theorem completeBipartiteExpansionAtom_positive_isObligatory
     exists_minimalAtomFreeUncountablyChromaticCard
       (completeBipartiteExpansionAtom.{u} n) hbad
   rcases hkappa with ⟨W0, D0, H0, hcard, hunc0, hfree0⟩
-  letI : DecidableEq W0 := Classical.decEq W0
+  let : DecidableEq W0 := Classical.decEq W0
   have hlocal : H0.LocallyCountablyChromaticBelow :=
     locallyCountablyChromaticBelow_of_minimalBad
       (completeBipartiteExpansionAtom.{u} n) H0 hcard hfree0 hminimal

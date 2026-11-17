@@ -1,5 +1,7 @@
-import Erdos593.Graph.ShiftGraphOddGirth
-import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceIntrinsic
+module
+
+public import Erdos593.Graph.ShiftGraphOddGirth
+public import Erdos593.TripleSystem.SequenceLiftEmbeddedSourceIntrinsic
 
 /-!
 # Shift-graph odd-Berge obstruction
@@ -9,6 +11,8 @@ sequence-lift obstruction.  Together with `ShiftGraphChromatic`, it supplies
 both host properties used by the avoidance argument: no countable colouring
 and no sufficiently short odd closed walk.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

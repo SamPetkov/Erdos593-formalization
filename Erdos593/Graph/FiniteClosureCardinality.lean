@@ -1,6 +1,8 @@
-import Mathlib.Data.Finset.Image
-import Mathlib.SetTheory.Cardinal.Arithmetic
-import Mathlib.SetTheory.Cardinal.Ordinal
+module
+
+public import Mathlib.Data.Finset.Image
+public import Mathlib.SetTheory.Cardinal.Arithmetic
+public import Mathlib.SetTheory.Cardinal.Ordinal
 
 /-!
 # Cardinal bounds for finite closures
@@ -14,6 +16,8 @@ The proof deliberately uses an explicit bound
 `max ℵ₀ #S`, rather than a regular-cardinal argument.  It is therefore valid
 at singular cardinals as well.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

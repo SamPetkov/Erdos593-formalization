@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.BridgeBlockRestriction
-import Erdos593.TripleSystem.SingleEdgePieceConstructible
+module
+
+public import Erdos593.TripleSystem.BridgeBlockRestriction
+public import Erdos593.TripleSystem.SingleEdgePieceConstructible
 
 /-!
 # Degenerate bridge-free blocks
@@ -8,6 +10,8 @@ A bridge-free Levi component containing a hyperedge-node of degree zero cannot
 contain any other hyperedge-node.  Its exact ambient edge restriction is
 therefore the constructible singleton-edge restriction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

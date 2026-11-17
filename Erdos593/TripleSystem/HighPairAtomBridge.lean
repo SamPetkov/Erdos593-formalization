@@ -1,7 +1,9 @@
-import Erdos593.Graph.MinimalBadCore
-import Erdos593.TripleSystem.HighPairMatrix
-import Erdos593.TripleSystem.ObligatoryAtoms
-import Mathlib.Combinatorics.SimpleGraph.Copy
+module
+
+public import Erdos593.Graph.MinimalBadCore
+public import Erdos593.TripleSystem.HighPairMatrix
+public import Erdos593.TripleSystem.ObligatoryAtoms
+public import Mathlib.Combinatorics.SimpleGraph.Copy
 
 /-!
 # The high-pair graph / positive-atom bridge
@@ -12,6 +14,8 @@ that grid can be selected globally injectively, so the grid directly embeds
 the corresponding private-vertex-expansion atom.  Consequently, a host
 avoiding that atom has a countably colorable high-pair graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -47,14 +51,14 @@ theorem highPairGrid_of_completeBipartiteNNCopy
         (Sum.inl (ULift.up i)) (Sum.inr (ULift.up j)) := by
       simp [completeBipartiteNN]
     have htgt : (highPairGraph H t).Adj (left i) (right j) := by
-      simpa [left, right] using f.toHom.map_adj hsrc
+      exact f.toHom.map_adj hsrc
     exact (highPairGraph_adj H t (left i) (right j)).mp htgt |>.1 h
   · intro i j
     have hsrc : (completeBipartiteNN.{u} n).Adj
         (Sum.inl (ULift.up i)) (Sum.inr (ULift.up j)) := by
       simp [completeBipartiteNN]
     have htgt : (highPairGraph H t).Adj (left i) (right j) := by
-      simpa [left, right] using f.toHom.map_adj hsrc
+      exact f.toHom.map_adj hsrc
     exact (highPairGraph_adj H t (left i) (right j)).mp htgt
 
 /-- One complete quadratic high-pair grid has a globally rainbow apex map,

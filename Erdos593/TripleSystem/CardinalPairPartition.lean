@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.TriangleHostRamsey
+module
+
+public import Erdos593.TripleSystem.TriangleHostRamsey
 
 /-!
 # Homogeneous pair-colouring interfaces
@@ -7,6 +9,8 @@ This module isolates the finite interface between a homogeneous set for a
 pair-colouring and the existing `PairRamseyTriangle` interface. It proves no
 partition theorem and introduces no axioms.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

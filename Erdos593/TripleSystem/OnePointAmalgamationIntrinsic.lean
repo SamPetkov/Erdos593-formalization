@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Intrinsic
-import Erdos593.TripleSystem.OnePointAmalgamation
+module
+
+public import Erdos593.TripleSystem.Intrinsic
+public import Erdos593.TripleSystem.OnePointAmalgamation
 
 /-!
 # Intrinsic conditions under one-point amalgamation
@@ -8,6 +10,8 @@ The canonical one-point amalgamation identifies exactly the two selected roots.
 This file proves that the intrinsic structural conditions are preserved by that
 operation.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -466,7 +470,8 @@ theorem amalgam_evenBergeCycles
     rcases a with x | e <;> rcases b with y | f
     all_goals
       simp [f₀, f₁, root, leftLeviEmbedding,
-        rightLeviEmbedding] at hb ⊢ <;> aesop
+        rightLeviEmbedding] at hb ⊢
+    all_goals aesop
   have hadj : ∀ ⦃a b⦄, (amalgam F₀ F₁ r₀ r₁).levi.Adj a b →
       (a ∈ A ∧ b ∈ A) ∨ (a ∈ B ∧ b ∈ B) := by
     intro a b hab

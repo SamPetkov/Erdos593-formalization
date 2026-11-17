@@ -1,4 +1,8 @@
-import Erdos593.TripleSystem.ErdosRado.SourceTerminal
+module
+
+public import Erdos593.TripleSystem.ErdosRado.SourceTerminal
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

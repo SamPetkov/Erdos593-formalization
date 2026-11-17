@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Embedding
-import Mathlib.SetTheory.Cardinal.Order
+module
+
+public import Erdos593.TripleSystem.Embedding
+public import Mathlib.SetTheory.Cardinal.Order
 
 /-!
 # Colourings, appearance, and obligatoriness
@@ -11,6 +13,8 @@ using this project's edge-indexed triple systems and non-induced embeddings.
 No statement or implementation from that external Apache-2.0 project is
 imported.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

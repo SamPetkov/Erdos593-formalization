@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.ErdosRado.PairTransport
-import Erdos593.TripleSystem.ErdosRado.TraceLimit
-import Erdos593.TripleSystem.ErdosRado.ErdosRadoCardinalArithmetic
-import Mathlib.SetTheory.Cardinal.Pigeonhole
+module
+
+public import Erdos593.TripleSystem.ErdosRado.PairTransport
+public import Erdos593.TripleSystem.ErdosRado.TraceLimit
+public import Erdos593.TripleSystem.ErdosRado.ErdosRadoCardinalArithmetic
+public import Mathlib.SetTheory.Cardinal.Pigeonhole
 
 /-!
 # Lifting a full endhomogeneous trace to a homogeneous pair set
@@ -12,6 +14,8 @@ pair colouring is endhomogeneous to its endpoint, it extracts an uncountable
 homogeneous set.  It deliberately proves neither the existence of such a
 prefix nor the global Erdos--Rado theorem.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem
@@ -104,7 +108,7 @@ universe before applying cardinal pigeonhole. -/
 theorem exists_nat_uncountable_fiber {gamma : Type u} (f : gamma -> Nat)
     (hgamma : Cardinal.aleph0 < Cardinal.mk gamma) :
     exists n : Nat, Cardinal.aleph0 < Cardinal.mk {x : gamma | f x = n} := by
-  letI : Uncountable gamma := Cardinal.aleph0_lt_mk_iff.mp hgamma
+  let : Uncountable gamma := Cardinal.aleph0_lt_mk_iff.mp hgamma
   let g : gamma -> ULift.{u} Nat := fun x => ULift.up (f x)
   have hg : Cardinal.mk (ULift.{u} Nat) < Cardinal.mk gamma := by
     rw [Cardinal.mk_uLift, Cardinal.mk_nat, Cardinal.lift_aleph0]

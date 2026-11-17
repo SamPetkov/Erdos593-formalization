@@ -1,4 +1,6 @@
-import Mathlib.Combinatorics.SimpleGraph.Bipartite
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Bipartite
 
 /-!
 # Universe-compatible balanced complete bipartite graphs
@@ -7,6 +9,8 @@ This file keeps the finite graph atom used throughout the formalization out of
 the triple-system layer. Both finite parts are lifted to the ambient universe,
 so a copy can live in a graph whose vertex type is in that same universe.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

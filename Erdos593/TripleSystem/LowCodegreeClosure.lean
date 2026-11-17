@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.HighPairGraph
-import Mathlib.Data.Finset.Card
+module
+
+public import Erdos593.TripleSystem.HighPairGraph
+public import Mathlib.Data.Finset.Card
 
 /-!
 # Finite completion closures below a pair-codegree threshold
@@ -11,6 +13,8 @@ least `t`, its completion set is finite, and its cardinality is strictly below
 finite-closure layering construction used in the low-codegree branch of the
 positive-atom strategy.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -106,13 +110,13 @@ theorem lowCompletionFinset_eq_empty_of_hasPairCodegreeAtLeast
     {H : TripleSystem W D} {x y : W} {t : Nat}
     (h : HasPairCodegreeAtLeast H x y t) :
     lowCompletionFinset H t x y = ∅ := by
-  rw [lowCompletionFinset, dif_pos h]
+  rw [lowCompletionFinset, dite_eq_left h]
 
 theorem lowCompletionFinset_eq_thirdVertexFinset_of_not_hasPairCodegreeAtLeast
     {H : TripleSystem W D} {x y : W} {t : Nat}
     (h : ¬ HasPairCodegreeAtLeast H x y t) :
     lowCompletionFinset H t x y = thirdVertexFinset h := by
-  rw [lowCompletionFinset, dif_neg h]
+  rw [lowCompletionFinset, dite_eq_right h]
 
 theorem mem_lowCompletionFinset_iff_of_not_hasPairCodegreeAtLeast
     {H : TripleSystem W D} {x y z : W} {t : Nat}

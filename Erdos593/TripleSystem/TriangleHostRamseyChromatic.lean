@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.TriangleHostRamsey
-import Erdos593.TripleSystem.ObligatoryDisjointUnion
+module
+
+public import Erdos593.TripleSystem.TriangleHostRamsey
+public import Erdos593.TripleSystem.ObligatoryDisjointUnion
 
 /-!
 # A chromatic-cardinal consequence of the triangle-host Ramsey interface
@@ -9,6 +11,8 @@ strict cardinal lower bound required by the later obstruction argument.  It
 is conditional on `PairRamseyTriangle`; it does not establish an
 Erdős--Rado partition theorem.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -38,7 +42,7 @@ theorem aleph0_lt_chromaticCardinal_of_pairRamseyTriangle
   refine ⟨x, hx, y, hy, ?_⟩
   intro hdown
   apply hxy
-  exact ULift.ext _ _ hdown
+  exact ULift.ext hdown
 
 end TriangleHost
 end TripleSystem

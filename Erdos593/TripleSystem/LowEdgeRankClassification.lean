@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.LowCodegreeLayering
-import Erdos593.TripleSystem.LowCrossingAtomBridge
+module
+
+public import Erdos593.TripleSystem.LowCodegreeLayering
+public import Erdos593.TripleSystem.LowCrossingAtomBridge
 
 /-!
 # Rank shapes of low-pair hyperedges
@@ -9,6 +11,8 @@ low-pair triple.  Consequently, every such triple is either contained in one
 rank fibre or has exactly two equal latest vertices and one earlier vertex.
 The latter alternative is recorded as an edge of the low crossing graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

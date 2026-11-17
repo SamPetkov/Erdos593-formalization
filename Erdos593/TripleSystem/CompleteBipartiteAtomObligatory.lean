@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ObligatoryAtoms
-import Erdos593.TripleSystem.PositiveAtomClassical
+module
+
+public import Erdos593.TripleSystem.ObligatoryAtoms
+public import Erdos593.TripleSystem.PositiveAtomClassical
 
 /-!
 # The all-parameter balanced expansion atom theorem
@@ -7,6 +9,8 @@ import Erdos593.TripleSystem.PositiveAtomClassical
 This module packages the zero-size atom and the positive-size classical
 endpoint into the single natural-number statement used by downstream results.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

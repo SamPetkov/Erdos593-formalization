@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportForestOrderBridge
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportTailDegree
-import Erdos593.TripleSystem.SequenceLiftFiniteLiftGenerated
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportForestOrderBridge
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportTailDegree
+public import Erdos593.TripleSystem.SequenceLiftFiniteLiftGenerated
 
 /-!
 # Finite-generation endpoint from acyclic base-fibre support overlap
@@ -12,6 +14,8 @@ generic host-relative finite-generation assembly theorem.
 The acyclicity hypothesis remains explicit: it is not inferred from linearity
 alone.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

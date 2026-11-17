@@ -1,4 +1,6 @@
-import Erdos593.Graph.Parity
+module
+
+public import Erdos593.Graph.Parity
 
 /-!
 # Bounded cycle parity
@@ -6,6 +8,8 @@ import Erdos593.Graph.Parity
 An odd closed walk always contains an odd simple cycle no longer than the
 walk.  This file records the bounded form needed for girth arguments.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

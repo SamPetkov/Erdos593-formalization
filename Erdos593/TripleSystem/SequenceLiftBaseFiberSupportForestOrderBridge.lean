@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportForestOrder
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportOverlapGraph
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportForestOrder
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportOverlapGraph
 
 /-!
 # From acyclic support-overlap graphs to base-fibre running orders
@@ -9,6 +11,8 @@ nodes to the tail-degree-one support order used by the base-fibre assembly
 theorems.  Its hypothesis is deliberately graph-theoretic: pairwise
 linearity alone does not imply support-overlap acyclicity.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -64,7 +68,7 @@ theorem exists_baseFiberSupportTailAtMostOneNeighbor_order_of_supportOverlapAcyc
         (∀ e, e ∈ S → baseNode e ∈ nodes) ∧
         baseFiberSupportTailAtMostOneNeighbor S nodes := by
   classical
-  letI : Fintype (activeBaseNodeIndex S) := activeBaseNodeIndexFintype hS
+  let : Fintype (activeBaseNodeIndex S) := activeBaseNodeIndexFintype hS
   obtain ⟨qs, hnodup, hqs, htail⟩ :=
     hacyclic.exists_tailAtMostOneNeighborOrder
   refine ⟨qs.map Subtype.val, hnodup.map Subtype.val_injective, ?_, ?_⟩

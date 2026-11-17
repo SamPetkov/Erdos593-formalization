@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Constructive
-import Erdos593.TripleSystem.EdgeRestriction
+module
+
+public import Erdos593.TripleSystem.Constructive
+public import Erdos593.TripleSystem.EdgeRestriction
 
 /-!
 # Reconstructing exact edge restrictions
@@ -9,6 +11,8 @@ pieces.  Disjoint vertex supports give a disjoint union, while a singleton
 support intersection gives the canonical one-point amalgamation.  A finite
 running-union theorem then packages repeated use of these identifications.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -22,7 +26,7 @@ variable {V : Type u} {E : Type v} (F : TripleSystem V E)
 theorem edgeSupportSet_union (S T : Set E) :
     F.edgeSupportSet (S ∪ T) = F.edgeSupportSet S ∪ F.edgeSupportSet T := by
   ext x
-  simp only [edgeSupportSet, Set.mem_setOf_eq, Set.mem_union]
+  simp only [edgeSupportSet, Set.mem_ofPred_eq, Set.mem_union]
   constructor
   · rintro ⟨e, heS | heT, hxe⟩
     · exact Or.inl ⟨e, heS, hxe⟩
@@ -45,7 +49,7 @@ noncomputable def edgeSupportUnionEquiv {S T : Set E}
     F.EdgeSupport S ⊕ F.EdgeSupport T ≃ F.EdgeSupport (S ∪ T) := by
   classical
   exact (Equiv.Set.union hST).symm |>.trans
-    (Equiv.setCongr (F.edgeSupportSet_union S T).symm)
+    (Set.equivOfEq (F.edgeSupportSet_union S T).symm)
 
 /-- If two source edge sets and their vertex supports are disjoint, the exact
 restriction to their union is the disjoint union of the two exact
@@ -69,7 +73,7 @@ noncomputable def edgeRestrictionUnionIsoDisjointUnion {S T : Set E}
             change False ↔ F.Inc _ _
             simp only [edgeSupportUnionEquiv, edgeUnionEquiv,
               Equiv.trans_apply, Equiv.Set.union_symm_apply_left,
-              Equiv.Set.union_symm_apply_right, Equiv.setCongr_apply]
+              Equiv.Set.union_symm_apply_right, Set.equivOfEq_apply]
             exact (iff_false_intro fun hxe =>
               Set.disjoint_left.mp hSupports x.2 ⟨e.1, e.2, hxe⟩).symm
     | inr x =>
@@ -78,7 +82,7 @@ noncomputable def edgeRestrictionUnionIsoDisjointUnion {S T : Set E}
             change False ↔ F.Inc _ _
             simp only [edgeSupportUnionEquiv, edgeUnionEquiv,
               Equiv.trans_apply, Equiv.Set.union_symm_apply_left,
-              Equiv.Set.union_symm_apply_right, Equiv.setCongr_apply]
+              Equiv.Set.union_symm_apply_right, Set.equivOfEq_apply]
             exact (iff_false_intro fun hxe =>
               Set.disjoint_left.mp hSupports ⟨e.1, e.2, hxe⟩ x.2).symm
         | inr e =>
@@ -255,11 +259,11 @@ def RunningEdgeAssembly : List (Set I) → Prop
 /-- The empty exact restriction belongs to the constructive class. -/
 theorem edgeRestriction_empty_constructible :
     Constructible (K.edgeRestriction ∅) := by
-  letI : IsEmpty (K.EdgeSupport ∅) := ⟨by
+  let : IsEmpty (K.EdgeSupport ∅) := ⟨by
     intro x
     rcases x.2 with ⟨e, he, hxe⟩
     exact he⟩
-  letI : Fintype (K.EdgeSupport ∅) := Fintype.ofFinite _
+  let : Fintype (K.EdgeSupport ∅) := Fintype.ofFinite _
   exact Constructible.ofIso
     (Constructible.ofEdgeless (K.EdgeSupport ∅))
     (edgelessIsoEdgeRestrictionEmpty K)

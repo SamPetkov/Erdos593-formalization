@@ -1,6 +1,8 @@
-import Erdos593.Graph.NonInducedFactor
-import Erdos593.TripleSystem.SequenceLiftBaseLetterSubgraph
-import Erdos593.TripleSystem.SequenceLiftBaseFiberEquiv
+module
+
+public import Erdos593.Graph.NonInducedFactor
+public import Erdos593.TripleSystem.SequenceLiftBaseLetterSubgraph
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberEquiv
 
 /-!
 # Local graph factors for canonical base fibres
@@ -11,6 +13,8 @@ factor portions of that construction, together with the edge equivalence
 available under a linearity assumption. It deliberately does not assert the
 private-vertex-expansion isomorphism of the corresponding triple-system fibre.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -59,10 +63,10 @@ theorem exists_fintype_baseFiberLetterSubgraphFactor
           Nonempty (Erdos593.SimpleGraph.NonInducedFactor J G)))) := by
   classical
   let K := baseLetterSubgraph G (baseLetter '' baseFiber S q)
-  letI : Finite K.verts := by
+  let : Finite K.verts := by
     dsimp [K]
     exact baseFiberLetterSubgraph_finite hS q
-  letI : Fintype K.verts := Fintype.ofFinite K.verts
+  let : Fintype K.verts := Fintype.ofFinite K.verts
   refine Exists.intro (K.verts : Type u) ?_
   apply Exists.intro (inferInstance : Fintype K.verts)
   apply Exists.intro K.coe

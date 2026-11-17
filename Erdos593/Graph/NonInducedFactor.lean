@@ -1,5 +1,7 @@
-import Mathlib.Combinatorics.SimpleGraph.Copy
-import Mathlib.Combinatorics.SimpleGraph.Walk.Maps
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Copy
+public import Mathlib.Combinatorics.SimpleGraph.Walk.Maps
 
 /-!
 # Non-induced graph factors
@@ -15,6 +17,8 @@ the two proof obligations visible at finite-trace interfaces and provides the
 standard conversion to the library API when an isomorphic image subgraph is
 needed.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

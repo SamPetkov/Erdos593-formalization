@@ -1,7 +1,9 @@
-import Erdos593.Graph.CompleteBipartite
-import Erdos593.TripleSystem.Expansion
-import Erdos593.TripleSystem.Obligatory
-import Erdos593.TripleSystem.RainbowExpansionEmbedding
+module
+
+public import Erdos593.Graph.CompleteBipartite
+public import Erdos593.TripleSystem.Expansion
+public import Erdos593.TripleSystem.Obligatory
+public import Erdos593.TripleSystem.RainbowExpansionEmbedding
 
 /-!
 # Obligatory private-vertex-expansion atoms
@@ -11,6 +13,8 @@ private-vertex-expansion atoms.  It intentionally contains no constructive
 closure or bipartite-reduction imports, so the positive atom theorem can be
 used by those downstream results without a dependency cycle.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

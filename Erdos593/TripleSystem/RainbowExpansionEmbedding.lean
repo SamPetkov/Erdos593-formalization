@@ -1,8 +1,12 @@
-import Erdos593.TripleSystem.Embedding
-import Erdos593.TripleSystem.Expansion
-import Erdos593.TripleSystem.PairCodegree
-import Erdos593.Graph.CompleteBipartiteEdges
-import Erdos593.Graph.RainbowBipartite
+module
+
+public import Erdos593.TripleSystem.Embedding
+public import Erdos593.TripleSystem.Expansion
+public import Erdos593.TripleSystem.PairCodegree
+public import Erdos593.Graph.CompleteBipartiteEdges
+public import Erdos593.Graph.RainbowBipartite
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -68,7 +72,7 @@ noncomputable def WitnessedBipartiteMatrix.rainbowEmbedding
       · have h : row a.down = row c.down := M.left.injective (by
           simpa [vertexMap] using hpq)
         have hac : a.down = c.down := row.injective h
-        have hac' : a = c := ULift.ext a c hac
+        have hac' : a = c := ULift.ext hac
         exact congrArg (fun z => Sum.inl (Sum.inl z)) hac'
       · exfalso
         exact M.core_disjoint (row a.down) (column d.down) (by
@@ -79,7 +83,7 @@ noncomputable def WitnessedBipartiteMatrix.rainbowEmbedding
       · have h : column b.down = column d.down := M.right.injective (by
           simpa [vertexMap] using hpq)
         have hbd : b.down = d.down := column.injective h
-        have hbd' : b = d := ULift.ext b d hbd
+        have hbd' : b = d := ULift.ext hbd
         exact congrArg (fun z => Sum.inl (Sum.inr z)) hbd'
     · rcases p with a | b
       · exfalso
@@ -152,7 +156,7 @@ noncomputable def WitnessedBipartiteMatrix.rainbowEmbedding
         ext z
         simp [vertexMap, PrivateVertexExpansion.core,
           PrivateVertexExpansion.privateVertex,
-          CompleteBipartiteEdges.coords_edge, eq_comm] }
+          CompleteBipartiteEdges.coords_edge] }
 
 theorem exists_rainbowEmbedding_of_witnessedMatrices
     {W : Type u} {D : Type v} (H : TripleSystem W D) (n t : Nat)

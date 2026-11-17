@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftFiniteTrace
+module
+
+public import Erdos593.TripleSystem.SequenceLiftFiniteTrace
 
 /-!
 # Canonical base fibres for sequence lifts
@@ -8,6 +10,8 @@ sequence-lift edges.  On a linear edge restriction, the canonical base letter is
 injective within each such fibre.  This supplies fibre-local cardinality
 transfer without asserting that a global finite-trace decomposition exists.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

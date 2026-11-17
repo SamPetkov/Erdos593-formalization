@@ -68,18 +68,21 @@ checks `isolatedReduction_inc`, which fixes its incidence relation exactly.
 
 ```bash
 lake build
-python scripts/generate_self_contained.py --check
 lake env lean Erdos593.lean
-lake env lean Erdos593SelfContained.lean
 ```
 
-The project is pinned to Lean/mathlib `v4.32.0`. GitHub Actions treats warnings
+All Lean sources use Lean's module system. The generated one-file closure
+`Erdos593SelfContained.lean` is not committed in this repository; it is
+preserved in
+[`SamPetkov/Erdos593`](https://github.com/SamPetkov/Erdos593/tree/d834f1f42e7e0d5d2a6c23e9487563bedb1b277b/formalization).
+
+The project is pinned to Lean/mathlib `v4.35.0`. GitHub Actions treats warnings
 as errors, checks deterministic regeneration, runs focused modules, and audits
 for proof placeholders and project-specific axioms.
 
 ## Trust boundary
 
-The local source closure and generated artifact contain no `sorry`, `admit`,
+The local source closure contains no `sorry`, `admit`,
 project-defined `axiom`, `unsafe`, or `sorryAx`. Representative endpoint audits
 report only the standard Mathlib foundations `propext`, `Classical.choice`, and
 `Quot.sound`. The machine check verifies the formal statements and proofs in

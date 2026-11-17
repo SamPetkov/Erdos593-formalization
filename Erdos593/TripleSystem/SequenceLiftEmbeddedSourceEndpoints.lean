@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceAcyclicEndpoints
-import Erdos593.TripleSystem.FiniteLinearImageTrace
-import Erdos593.TripleSystem.FiniteLiftGeneratedBergeCycleTrace
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceAcyclicEndpoints
+public import Erdos593.TripleSystem.FiniteLinearImageTrace
+public import Erdos593.TripleSystem.FiniteLiftGeneratedBergeCycleTrace
 
 /-!
 # Endpoints for finite linear sources embedded in a sequence lift
@@ -16,6 +18,8 @@ The source and the sequence lift share a universe here because the existing
 wrapper, if needed, should be introduced separately via an explicit `ULift`
 transport rather than hidden in this endpoint.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,6 +1,8 @@
-import Mathlib.Combinatorics.SimpleGraph.Acyclic
-import Mathlib.Data.Set.Card
-import Mathlib.SetTheory.Cardinal.Order
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Acyclic
+public import Mathlib.Data.Set.Card
+public import Mathlib.SetTheory.Cardinal.Order
 
 /-!
 # Erdős Problem 593: protected statement
@@ -10,6 +12,8 @@ obligatory triple systems.  The candidate solution imports the full project;
 Comparator checks that the statement and every ordinary declaration used by
 its type agree with this independently compiled surface.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

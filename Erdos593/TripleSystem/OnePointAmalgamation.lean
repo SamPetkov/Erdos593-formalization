@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.Embedding
-import Erdos593.TripleSystem.Isomorph
+module
+
+public import Erdos593.TripleSystem.Embedding
+public import Erdos593.TripleSystem.Isomorph
 
 /-!
 # One-point amalgamations
@@ -10,6 +12,8 @@ incidence is defined by the image of each factor edge under its quotient
 inclusion. The final universal-property lemmas support reconstruction up to
 triple-system isomorphism.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -28,15 +32,15 @@ def Rel (r₀ : V₀) (r₁ : V₁) : Sum V₀ V₁ → Sum V₀ V₁ → Prop
   | .inl x, .inr y => x = r₀ ∧ y = r₁
   | .inr y, .inl x => y = r₁ ∧ x = r₀
 
-private theorem rel_refl (r₀ : V₀) (r₁ : V₁) (x : Sum V₀ V₁) :
+theorem rel_refl (r₀ : V₀) (r₁ : V₁) (x : Sum V₀ V₁) :
     Rel r₀ r₁ x x := by
   cases x <;> simp [Rel]
 
-private theorem rel_symm (r₀ : V₀) (r₁ : V₁) {x y : Sum V₀ V₁}
+theorem rel_symm (r₀ : V₀) (r₁ : V₁) {x y : Sum V₀ V₁}
     (h : Rel r₀ r₁ x y) : Rel r₀ r₁ y x := by
   cases x <;> cases y <;> simp_all [Rel]
 
-private theorem rel_trans (r₀ : V₀) (r₁ : V₁) {x y z : Sum V₀ V₁}
+theorem rel_trans (r₀ : V₀) (r₁ : V₁) {x y z : Sum V₀ V₁}
     (hxy : Rel r₀ r₁ x y) (hyz : Rel r₀ r₁ y z) : Rel r₀ r₁ x z := by
   cases x <;> cases y <;> cases z <;> simp_all [Rel]
 

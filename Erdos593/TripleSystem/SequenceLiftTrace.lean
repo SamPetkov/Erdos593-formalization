@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLift
-import Erdos593.TripleSystem.EdgeRestriction
+module
+
+public import Erdos593.TripleSystem.SequenceLift
+public import Erdos593.TripleSystem.EdgeRestriction
 
 /-!
 # Linear trace uniqueness for sequence lifts
@@ -8,6 +10,8 @@ In a linear edge restriction, two sequence-lifted edges with the same
 base trace and base pair must coincide.  This is the local rigidity fact
 needed for the finite-trace decomposition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

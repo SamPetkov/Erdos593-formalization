@@ -1,5 +1,9 @@
-import Erdos593.TripleSystem.ErdosRado.Theorem
-import Erdos593.TripleSystem.TriangleHostRamseyTransport
+module
+
+public import Erdos593.TripleSystem.ErdosRado.Theorem
+public import Erdos593.TripleSystem.TriangleHostRamseyTransport
+
+@[expose] public section
 
 namespace Erdos593.TripleSystem
 

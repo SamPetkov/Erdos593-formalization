@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseApex
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseApex
 
 /-!
 # Canonical incidence in one sequence-lift edge
@@ -7,6 +9,8 @@ This local normal form identifies the three points incident with a lift edge:
 the two endpoints of its canonical base letter at the canonical base node,
 and its canonical apex. It makes no claim about other edges or fibres.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

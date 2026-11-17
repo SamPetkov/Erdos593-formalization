@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ErdosRado.TraceExtension
-import Mathlib.SetTheory.Ordinal.Rank
+module
+
+public import Erdos593.TripleSystem.ErdosRado.TraceExtension
+public import Mathlib.SetTheory.Ordinal.Rank
 
 /-!
 # Conditional canonical trace tree
@@ -10,6 +12,8 @@ principle, or state the eventual partition relation.  The construction of an
 inhabitant belongs upstream; reduced-color coding and its injectivity belong
 downstream.
 -/
+
+@[expose] public section
 
 namespace Erdos593.TripleSystem.TriangleHost.ErdosRado
 
@@ -109,28 +113,25 @@ theorem predecessor_wellFounded : WellFounded T.predecessor := by
   intro b a h
   exact T.predecessor_lt h
 
-theorem predecessor_isWellFounded : IsWellFounded TraceCarrier T.predecessor :=
-  { wf := T.predecessor_wellFounded }
+theorem predecessor_isWellFounded : WellFounded T.predecessor :=
+  T.predecessor_wellFounded
 
 /-- The well-founded rank of a trace node for the predecessor relation. -/
 noncomputable def treeRank (a : TraceCarrier) : Ordinal :=
-  @IsWellFounded.rank TraceCarrier T.predecessor
-    { wf := T.predecessor_wellFounded } a
+  @WellFounded.rank TraceCarrier T.predecessor T.predecessor_wellFounded a
 
 theorem treeRank_lt_of_predecessor {b a : TraceCarrier}
     (h : T.predecessor b a) : T.treeRank b < T.treeRank a := by
-  letI : IsWellFounded TraceCarrier T.predecessor :=
-    { wf := T.predecessor_wellFounded }
-  exact IsWellFounded.rank_lt_of_rel h
+  have : WellFounded T.predecessor := T.predecessor_wellFounded
+  exact WellFounded.rank_lt_of_rel h
 
 theorem treeRank_eq_iSup (a : TraceCarrier) :
     T.treeRank a =
       ⨆ b : {b : TraceCarrier // T.predecessor b a},
         Order.succ (T.treeRank b) := by
   unfold treeRank
-  letI : IsWellFounded TraceCarrier T.predecessor :=
-    { wf := T.predecessor_wellFounded }
-  exact IsWellFounded.rank_eq _ _
+  have : WellFounded T.predecessor := T.predecessor_wellFounded
+  exact WellFounded.rank_eq _ _
 
 /-- The trace height is exactly the well-founded rank of its endpoint.
 

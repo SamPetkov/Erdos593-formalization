@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceForestOrderBridge
-import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrderEndpoints
-import Erdos593.TripleSystem.SequenceLiftFiniteLiftGenerated
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportIncidenceForestOrderBridge
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberSupportRunningOrderEndpoints
+public import Erdos593.TripleSystem.SequenceLiftFiniteLiftGenerated
 
 /-!
 # Endpoints from acyclic base-fibre support incidence graphs
@@ -10,6 +12,8 @@ assembly needed for finite generation and the coherent running order needed by
 the existing constructibility and obligatoriness endpoints.  The incidence
 acyclicity hypothesis is deliberately explicit here.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

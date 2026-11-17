@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.BridgeBlockPackaging
-import Erdos593.TripleSystem.Constructive
-import Erdos593.TripleSystem.EdgeRestriction
+module
+
+public import Erdos593.TripleSystem.BridgeBlockPackaging
+public import Erdos593.TripleSystem.Constructive
+public import Erdos593.TripleSystem.EdgeRestriction
 
 /-!
 # Exact restrictions represented by active bridge-free blocks
@@ -12,6 +14,8 @@ point is vertex surjectivity: the support of those hyperedges consists exactly
 of the component's point-nodes together with the unique private point of each
 component hyperedge.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -203,7 +207,7 @@ theorem activeComponentRestriction_constructible
     (hberge : K.EvenBergeCycles) {C : Component K}
     (hC : HasIncidence K C) :
     Constructible (K.edgeRestriction (componentHyperedgeSet K C)) := by
-  letI : Fintype (Point K C) := Fintype.ofFinite (Point K C)
+  let : Fintype (Point K C) := Fintype.ofFinite (Point K C)
   have hExpansion :
       Constructible (privateVertexExpansion (contractedGraph K C)) :=
     Constructible.ofExpansion (contractedGraph K C)

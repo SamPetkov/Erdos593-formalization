@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiber
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiber
 
 /-!
 # Fibre-local equivalence for sequence lifts
@@ -8,6 +10,8 @@ equivalence from each selected base fibre to its own image.  This is a
 fibre-local structural interface; it makes no identification between images
 from different base fibres and asserts no global trace decomposition.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

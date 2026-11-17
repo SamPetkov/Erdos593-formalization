@@ -1,7 +1,9 @@
-import Erdos593.Graph.FiniteClosureLayering
-import Erdos593.TripleSystem.MinimalBadCore
-import Erdos593.TripleSystem.ObligatoryOnePointAmalgamation
-import Erdos593.TripleSystem.PredicateColoring
+module
+
+public import Erdos593.Graph.FiniteClosureLayering
+public import Erdos593.TripleSystem.MinimalBadCore
+public import Erdos593.TripleSystem.ObligatoryOnePointAmalgamation
+public import Erdos593.TripleSystem.PredicateColoring
 
 /-!
 # Same-rank edge colourings
@@ -11,6 +13,8 @@ argument.  A rank map may have arbitrarily many values, but an edge whose
 vertices all have one rank can be coloured using only the chosen colouring of
 that one fibre.  Consequently no rank value needs to be encoded as a colour.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

@@ -1,7 +1,9 @@
-import Erdos593.TripleSystem.DisjointUnion
-import Erdos593.TripleSystem.Embedding
-import Erdos593.TripleSystem.Intrinsic
-import Mathlib.Combinatorics.SimpleGraph.Sum
+module
+
+public import Erdos593.TripleSystem.DisjointUnion
+public import Erdos593.TripleSystem.Embedding
+public import Erdos593.TripleSystem.Intrinsic
+public import Mathlib.Combinatorics.SimpleGraph.Sum
 
 /-!
 # Forward properties of disjoint unions
@@ -9,6 +11,8 @@ import Mathlib.Combinatorics.SimpleGraph.Sum
 The tagged summands embed canonically in a disjoint union, and linearity is
 inherited componentwise.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

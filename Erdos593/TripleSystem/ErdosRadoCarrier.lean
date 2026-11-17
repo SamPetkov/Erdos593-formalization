@@ -1,6 +1,8 @@
-import Erdos593.TripleSystem.CardinalPairPartition
-import Mathlib.SetTheory.Cardinal.Basic
-import Mathlib.SetTheory.Cardinal.Continuum
+module
+
+public import Erdos593.TripleSystem.CardinalPairPartition
+public import Mathlib.SetTheory.Cardinal.Basic
+public import Mathlib.SetTheory.Cardinal.Continuum
 
 /-!
 # Erdos--Rado carrier interface
@@ -10,6 +12,8 @@ the continuum and records the exact infinite homogeneous-set premise needed
 by the countably-coloured Erdos--Rado special case.  It intentionally does
 not assert or prove that premise.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem

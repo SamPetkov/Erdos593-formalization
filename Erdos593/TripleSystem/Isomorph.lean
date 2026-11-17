@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.Basic
+module
+
+public import Erdos593.TripleSystem.Basic
 
 /-!
 # Triple-system isomorphisms
@@ -8,6 +10,8 @@ the edge indices by equivalences, and preserves incidence in both directions.
 Relabelling only the vertices would not be sufficient: the edge indices are
 part of the representation used by the Levi graph.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

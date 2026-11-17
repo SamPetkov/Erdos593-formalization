@@ -153,7 +153,7 @@ The underlying O9 transfer remains a reusable conditional API, but
 `completeBipartiteExpansionAtom_isObligatory` now discharges its premise;
 `Constructible.isObligatory` records the unconditional consequence.
 
-The canonical project uses Lean/mathlib `v4.32.0`.  Aristotle currently works
+The canonical project uses Lean/mathlib `v4.35.0` (ported from `v4.32.0`).  Aristotle currently works
 best with `v4.28.0`; therefore results produced in a 4.28 staging project are
 accepted only after the unchanged theorem statement and transplanted proof body
 compile under 4.32.  In particular, `SimpleGraph.IsBridge` changed semantics

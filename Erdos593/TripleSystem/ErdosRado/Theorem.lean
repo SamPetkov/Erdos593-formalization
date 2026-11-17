@@ -1,5 +1,9 @@
-import Erdos593.TripleSystem.ErdosRado.SourceSystem
-import Erdos593.TripleSystem.ErdosRado.EndhomogeneousLift
+module
+
+public import Erdos593.TripleSystem.ErdosRado.SourceSystem
+public import Erdos593.TripleSystem.ErdosRado.EndhomogeneousLift
+
+@[expose] public section
 
 namespace Erdos593.TripleSystem.TriangleHost.ErdosRado
 

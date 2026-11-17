@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.Intrinsic
+module
+
+public import Erdos593.TripleSystem.Intrinsic
 
 /-!
 # Bridge selectors
@@ -9,6 +11,8 @@ decomposition used by the core formalization to interoperate with the
 selected-incidence formulation in Eric Li's contemporaneous proof
 (`arXiv:2606.24882`, Sections 3--5).  No result from that paper is assumed here.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

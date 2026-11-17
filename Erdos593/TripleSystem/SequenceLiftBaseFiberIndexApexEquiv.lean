@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiberIndex
-import Erdos593.TripleSystem.SequenceLiftBaseApexEquiv
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiberIndex
+public import Erdos593.TripleSystem.SequenceLiftBaseApexEquiv
 
 /-!
 # Source-indexed apex equivalence for sequence lifts
@@ -8,6 +10,8 @@ For an embedded sequence lift with linear edge image, the source-edge
 indices in one canonical base fibre are equivalent to the canonical-apex
 image of that fibre.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -27,7 +31,7 @@ noncomputable def baseFiberIndexEquivBaseFiber
     intro i j hij
     apply Subtype.ext
     exact f.edge_injective hij)).trans
-    (Equiv.setCongr (baseFiber_edgeImage_eq_range f q).symm)
+    (Set.equivOfEq (baseFiber_edgeImage_eq_range f q).symm)
 
 /-- Under linearity of the embedded edge image, the source-edge indices in
 one canonical base fibre are equivalent to the canonical-apex image of that

@@ -1,4 +1,6 @@
-import Erdos593.TripleSystem.SequenceLiftBaseFiber
+module
+
+public import Erdos593.TripleSystem.SequenceLiftBaseFiber
 
 /-!
 # Canonical apex points in sequence-lift base fibres
@@ -8,6 +10,8 @@ canonical base fibre, that point is private to its own selected edge. These
 are factor-local facts; this module makes no global trace-decomposition or
 cardinality-sum claim.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

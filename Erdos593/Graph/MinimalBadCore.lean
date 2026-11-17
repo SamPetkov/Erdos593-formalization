@@ -1,8 +1,10 @@
-import Erdos593.Graph.CompleteBipartiteCopy
-import Erdos593.Graph.CompleteBipartiteLayering
-import Erdos593.Graph.CountableColoring
-import Erdos593.Graph.FiniteClosureLayeringConstruction
-import Mathlib.SetTheory.Cardinal.Order
+module
+
+public import Erdos593.Graph.CompleteBipartiteCopy
+public import Erdos593.Graph.CompleteBipartiteLayering
+public import Erdos593.Graph.CountableColoring
+public import Erdos593.Graph.FiniteClosureLayeringConstruction
+public import Mathlib.SetTheory.Cardinal.Order
 
 /-!
 # Minimal bad cores for the complete-bipartite graph lemma
@@ -10,6 +12,8 @@ import Mathlib.SetTheory.Cardinal.Order
 This module packages the cardinal-minimal-counterexample reduction and closes
 it using the singular-cardinal-safe finite-closure layering construction.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -77,7 +81,7 @@ theorem locallyCountablyColorableBelow_of_minimalBad
 /-- A graph on a countable carrier has a proper colouring by natural numbers. -/
 theorem countablyColorable_of_countable (G : _root_.SimpleGraph V) [Countable V] :
     CountablyColorable G := by
-  letI : Encodable V := Encodable.ofCountable V
+  let : Encodable V := Encodable.ofCountable V
   apply Nonempty.intro
   apply _root_.SimpleGraph.Coloring.mk Encodable.encode
   intro x y hxy heq

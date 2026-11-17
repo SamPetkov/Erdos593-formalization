@@ -1,5 +1,7 @@
-import Erdos593.TripleSystem.ErdosRado.SourceRecursion
-import Erdos593.TripleSystem.ErdosRado.SourceCanonical
+module
+
+public import Erdos593.TripleSystem.ErdosRado.SourceRecursion
+public import Erdos593.TripleSystem.ErdosRado.SourceCanonical
 
 /-!
 # Coherence of the source recursion
@@ -9,6 +11,8 @@ source recursion when the recursion is anchored above the trace.  In
 particular, the run below a node of the trace agrees with every earlier stage
 of that trace.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 namespace TripleSystem
@@ -46,7 +50,7 @@ theorem sourceRun_at_candidate
         unfold TracePrefix.before
         rw [TracePrefix.graph_restrict, TracePrefix.graph_restrict]
         ext z
-        simp only [Set.mem_inter_iff, Set.mem_setOf_eq]
+        simp only [Set.mem_inter_iff, Set.mem_ofPred_eq]
         rw [hiord]
       have hcanonicalAt :
           ∃ r : TraceCandidate c (p.restrict eta hbase),
@@ -94,7 +98,7 @@ theorem sourceRun_at_candidate
       rw [sourceRun_limit c q.value eta hlimit]
       rw [TracePrefix.graph_restrict]
       ext z
-      simp only [Set.mem_iUnion, Set.mem_inter_iff, Set.mem_setOf_eq]
+      simp only [Set.mem_iUnion, Set.mem_inter_iff, Set.mem_ofPred_eq]
       constructor
       · rintro ⟨beta, hz⟩
         rw [ih beta.1 beta.2 ((le_of_lt beta.2).trans heta)] at hz
@@ -123,10 +127,13 @@ theorem sourceRun_at_node_stage
   have hbeforeCanonical : (p.before xi).IsSourceCanonicalFor c := by
     exact hcanonical.restrict (le_of_lt xi.toOrd.2)
   have hrun := sourceRun_at_candidate hbeforeCanonical qxi htheta
-  rw [hrun, TracePrefix.graph_restrict, TracePrefix.before,
-    TracePrefix.graph_restrict, TracePrefix.graph_restrict]
+  have h1 := TracePrefix.graph_restrict (p.before xi) htheta
+  have h2 := TracePrefix.graph_restrict p (le_of_lt (Set.mem_Iio.mp xi.toOrd.2))
+  rw [hrun, h1]
+  change (p.restrict xi.toOrd (le_of_lt (Set.mem_Iio.mp xi.toOrd.2))).graph ∩ _ = _
+  rw [h2, TracePrefix.graph_restrict]
   ext z
-  simp only [Set.mem_inter_iff, Set.mem_setOf_eq]
+  simp only [Set.mem_inter_iff, Set.mem_ofPred_eq]
   constructor
   · rintro ⟨⟨hz, _⟩, hztheta⟩
     exact ⟨hz, hztheta⟩

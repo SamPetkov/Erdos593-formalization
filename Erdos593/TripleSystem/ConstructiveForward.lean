@@ -1,8 +1,10 @@
-import Erdos593.TripleSystem.Constructive
-import Erdos593.TripleSystem.DisjointUnionForward
-import Erdos593.TripleSystem.ForwardExpansion
-import Erdos593.TripleSystem.IsomorphIntrinsic
-import Erdos593.TripleSystem.OnePointAmalgamationIntrinsic
+module
+
+public import Erdos593.TripleSystem.Constructive
+public import Erdos593.TripleSystem.DisjointUnionForward
+public import Erdos593.TripleSystem.ForwardExpansion
+public import Erdos593.TripleSystem.IsomorphIntrinsic
+public import Erdos593.TripleSystem.OnePointAmalgamationIntrinsic
 
 /-!
 # Constructive systems satisfy the intrinsic conditions
@@ -10,6 +12,8 @@ import Erdos593.TripleSystem.OnePointAmalgamationIntrinsic
 This is the structural-induction endpoint for the forward half of the finite
 classification.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 

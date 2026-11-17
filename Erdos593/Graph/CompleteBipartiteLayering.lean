@@ -1,6 +1,8 @@
-import Erdos593.Graph.CompleteBipartiteCopy
-import Erdos593.Graph.CountableColoring
-import Erdos593.Graph.FiniteClosureLayering
+module
+
+public import Erdos593.Graph.CompleteBipartiteCopy
+public import Erdos593.Graph.CountableColoring
+public import Erdos593.Graph.FiniteClosureLayering
 
 /-!
 # Closure layerings and complete-bipartite forcing
@@ -14,6 +16,8 @@ countably colourable.
 Constructing such a layering with small fibres is deliberately separate: it
 is the singular-cardinal-sensitive infinitary part of the argument.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -29,7 +33,7 @@ theorem finite_of_no_finiteBipartitePart_embedding {n : Nat} (S : Set V)
     Set.Finite S := by
   classical
   by_contra hfinite
-  letI : Infinite S := Set.infinite_coe_iff.mpr hfinite
+  let : Infinite S := Set.infinite_coe_iff.mpr hfinite
   let finToNat : FiniteBipartitePart.{u} n ↪ Nat :=
     (Equiv.ulift.{u, 0}.toEmbedding).trans Fin.valEmbedding
   let right : FiniteBipartitePart.{u} n ↪ S :=
@@ -94,7 +98,7 @@ theorem mem_commonNeighborClosure_iff {n : Nat}
     exact hv' i
   · intro hv
     simp only [commonNeighborClosure, Set.Finite.mem_toFinset, commonNeighborSet,
-      Set.mem_setOf_eq]
+      Set.mem_ofPred_eq]
     intro i
     exact hv _ (finiteBipartitePartEmbeddingFinset_mem s.1 s.2 i)
 

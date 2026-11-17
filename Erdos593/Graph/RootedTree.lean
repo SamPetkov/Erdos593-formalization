@@ -1,4 +1,6 @@
-import Mathlib.Combinatorics.SimpleGraph.Acyclic
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Acyclic
 
 /-!
 # Rooted-tree geometry
@@ -6,6 +8,8 @@ import Mathlib.Combinatorics.SimpleGraph.Acyclic
 Depth and closed-star facts used by the running-intersection reconstruction of
 the bridge-block quotient forest.
 -/
+
+@[expose] public section
 
 namespace Erdos593
 
@@ -38,7 +42,7 @@ theorem eq_of_adj_of_dist_add_one
   have hpCX : (pC.concat hCX).IsPath := hpC.concat hXnotC hCX
   have hpDX : (pD.concat hDX).IsPath := hpD.concat hXnotD hDX
   have hpaths : pC.concat hCX = pD.concat hDX := by
-    exact Subtype.mk.inj (hG.isAcyclic.path_unique ⟨_, hpCX⟩ ⟨_, hpDX⟩)
+    exact Subtype.mk.inj ((hG.isAcyclic.subsingleton_path _ _).elim ⟨_, hpCX⟩ ⟨_, hpDX⟩)
   have hpenultimate := congrArg (fun p => p.penultimate) hpaths
   simpa using hpenultimate
 

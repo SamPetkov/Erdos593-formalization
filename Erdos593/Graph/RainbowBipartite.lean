@@ -1,12 +1,14 @@
-import Mathlib.Data.Finset.Card
-import Mathlib.Data.Fintype.BigOperators
-import Mathlib.Logic.Embedding.Basic
-import Mathlib.SetTheory.Cardinal.Finite
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
-import Mathlib.Tactic.GCongr
-import Mathlib.Tactic.Order
-import Mathlib.Tactic.Push
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.Data.Finset.Card
+public import Mathlib.Data.Fintype.BigOperators
+public import Mathlib.Logic.Embedding.Basic
+public import Mathlib.SetTheory.Cardinal.Finite
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
+public import Mathlib.Tactic.GCongr
+public import Mathlib.Tactic.Order
+public import Mathlib.Tactic.Push
+public import Mathlib.Tactic.Ring
 
 /-!
 # Rainbow bipartite submatrices
@@ -14,6 +16,8 @@ import Mathlib.Tactic.Ring
 Sanitized standalone staging file for the finite combinatorial lemma used in
 Erdos Problem 593.  No project-local declarations are imported.
 -/
+
+@[expose] public section
 
 open Function
 

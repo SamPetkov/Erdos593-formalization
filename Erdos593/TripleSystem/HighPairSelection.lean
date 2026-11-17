@@ -1,5 +1,9 @@
-import Mathlib.Combinatorics.Hall.Basic
-import Mathlib.Data.Fin.Tuple.Embedding
+module
+
+public import Mathlib.Combinatorics.Hall.Basic
+public import Mathlib.Data.Fin.Tuple.Embedding
+
+@[expose] public section
 
 namespace Erdos593
 
