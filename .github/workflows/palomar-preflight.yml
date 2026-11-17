@@ -2,13 +2,9 @@ name: Palomar preflight
 
 # Runs Palomar's complete reusable verification workflow as an advisory
 # mechanical preflight. It does not submit anything to Palomar.
-# workflow_dispatch works once this file is on the default branch; until then
-# pushes to the port branch trigger it.
+# Run it by hand from the Actions tab (workflow_dispatch).
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - palomar-module-port
 
 permissions:
   contents: read
